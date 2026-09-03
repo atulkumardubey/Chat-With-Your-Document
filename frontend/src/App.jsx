@@ -6,10 +6,13 @@ import './App.css'
 
 export default function App() {
   const [docs, setDocs] = useState([])
-  const [messages, setMessages] = useState([])
+  const [messagesByDoc, setMessagesByDoc] = useState({})
   const [showUpload, setShowUpload] = useState(false)
   const [activeDoc, setActiveDoc] = useState(null)
   const [isTyping, setIsTyping] = useState(false)
+
+  const docKey = activeDoc?.id ?? 'all'
+  const messages = messagesByDoc[docKey] ?? []
 
   useEffect(() => {
     fetch('/api/documents')
@@ -19,28 +22,32 @@ export default function App() {
   }, [])
 
   const handleSend = async (text) => {
-    const userMsg = { id: Date.now(), role: 'user', content: text }
-    setMessages((prev) => [...prev, userMsg])
+    // Captured at send time so the reply lands in the right thread even if the user
+    // switches the active document while the request is in flight.
+    const key = docKey
+    const selectedDocId = activeDoc?.id ?? null
+    const appendMessage = (msg) =>
+      setMessagesByDoc((prev) => ({ ...prev, [key]: [...(prev[key] ?? []), msg] }))
+
+    appendMessage({ id: Date.now(), role: 'user', content: text })
     setIsTyping(true)
 
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, selectedDocId: activeDoc?.id ?? null }),
+        body: JSON.stringify({ message: text, selectedDocId }),
       })
       if (!res.ok) throw new Error(`Chat request failed: ${res.status}`)
       const data = await res.json()
-      const botMsg = { id: Date.now() + 1, role: 'assistant', content: data.content, citations: data.citations }
-      setMessages((prev) => [...prev, botMsg])
+      appendMessage({ id: Date.now() + 1, role: 'assistant', content: data.content, citations: data.citations })
     } catch (err) {
-      const botMsg = {
+      appendMessage({
         id: Date.now() + 1,
         role: 'assistant',
         content: `Something went wrong reaching the backend: ${err.message}`,
         citations: [],
-      }
-      setMessages((prev) => [...prev, botMsg])
+      })
     } finally {
       setIsTyping(false)
     }
@@ -96,6 +103,7 @@ export default function App() {
           isTyping={isTyping}
           onSend={handleSend}
           hasDocs={docs.length > 0}
+          activeDoc={activeDoc}
         />
       </main>
       {showUpload && (

@@ -8,7 +8,7 @@ const SUGGESTIONS = [
   'Summarise the Excel data',
 ]
 
-export default function ChatWindow({ messages, isTyping, onSend, hasDocs }) {
+export default function ChatWindow({ messages, isTyping, onSend, hasDocs, activeDoc }) {
   const [input, setInput] = useState('')
   const bottomRef = useRef(null)
   const textareaRef = useRef(null)
@@ -42,8 +42,8 @@ export default function ChatWindow({ messages, isTyping, onSend, hasDocs }) {
     <>
       <div className="chat-header">
         <div className="chat-header-title">
-          <h1>Chat With Your Document</h1>
-          <span className="chat-header-badge">Demo</span>
+          <h1>{activeDoc ? activeDoc.name : 'Chat With Your Document'}</h1>
+          <span className="chat-header-badge">{activeDoc ? 'Scoped' : 'Demo'}</span>
         </div>
         <div className="chat-header-info">
           <span className="header-dot" />
