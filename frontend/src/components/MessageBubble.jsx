@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 function renderContent(text) {
   // Bold: **text**
   const parts = text.split(/(\*\*[^*]+\*\*)/)
@@ -30,6 +32,8 @@ function CitationCard({ citation }) {
 
 export default function MessageBubble({ message }) {
   const isUser = message.role === 'user'
+  const [sourcesOpen, setSourcesOpen] = useState(false)
+
   return (
     <div className={`msg-row ${isUser ? 'user' : 'assistant'}`}>
       <div className={`msg-avatar ${isUser ? 'user' : 'assistant'}`}>
@@ -41,8 +45,16 @@ export default function MessageBubble({ message }) {
         </div>
         {!isUser && message.citations?.length > 0 && (
           <div className="citations">
-            <div className="citation-label">Sources</div>
-            {message.citations.map((c, i) => (
+            <button
+              type="button"
+              className="citation-toggle"
+              onClick={() => setSourcesOpen((open) => !open)}
+              aria-expanded={sourcesOpen}
+            >
+              <span className={`citation-toggle-arrow ${sourcesOpen ? 'open' : ''}`}>▸</span>
+              Sources ({message.citations.length})
+            </button>
+            {sourcesOpen && message.citations.map((c, i) => (
               <CitationCard key={i} citation={c} />
             ))}
           </div>
