@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# Node (frontend has its own, this covers root-level tooling)
+node_modules/
+
+# Eval artifacts
+eval/fixtures/
+eval/results/
+
+# Editor
+.vscode/
+.DS_Store

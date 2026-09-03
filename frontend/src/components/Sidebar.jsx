@@ -1,4 +1,11 @@
-export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc }) {
+export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDeleteDoc }) {
+  const handleDelete = (e, doc) => {
+    e.stopPropagation()
+    if (window.confirm(`Delete "${doc.name}"? This removes it and all its indexed data permanently.`)) {
+      onDeleteDoc(doc.id)
+    }
+  }
+
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -31,6 +38,14 @@ export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc }) {
               </div>
             </div>
             <div className={`doc-status ${doc.status}`} title={doc.status} />
+            <button
+              type="button"
+              className="doc-delete-btn"
+              title="Delete document"
+              onClick={(e) => handleDelete(e, doc)}
+            >
+              🗑
+            </button>
           </div>
         ))}
       </div>
