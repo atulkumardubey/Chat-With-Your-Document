@@ -30,9 +30,37 @@ function CitationCard({ citation }) {
   )
 }
 
+function DocReadyCard({ message }) {
+  const isExcel = message.docType === 'excel'
+  const meta = isExcel
+    ? `${message.sheets ?? '?'} sheet${message.sheets !== 1 ? 's' : ''}`
+    : `${message.pages ?? '?'} page${message.pages !== 1 ? 's' : ''}`
+
+  return (
+    <div className="doc-ready-card">
+      <div className="doc-ready-icon">{isExcel ? '📗' : '📕'}</div>
+      <div className="doc-ready-content">
+        <div className="doc-ready-header">
+          <span className="doc-ready-badge">Indexed</span>
+          <span className="doc-ready-meta">{meta}</span>
+        </div>
+        <div className="doc-ready-name">{message.docName}</div>
+        <p className="doc-ready-hint">
+          Document indexed and ready. Ask me anything about its contents!
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export default function MessageBubble({ message }) {
-  const isUser = message.role === 'user'
   const [sourcesOpen, setSourcesOpen] = useState(false)
+
+  if (message.role === 'system') {
+    return <DocReadyCard message={message} />
+  }
+
+  const isUser = message.role === 'user'
 
   return (
     <div className={`msg-row ${isUser ? 'user' : 'assistant'}`}>

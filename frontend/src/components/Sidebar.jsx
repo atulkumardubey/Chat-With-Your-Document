@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDeleteDoc }) {
+  const [search, setSearch] = useState('')
+
   const handleDelete = (e, doc) => {
     e.stopPropagation()
     if (window.confirm(`Delete "${doc.name}"? This removes it and all its indexed data permanently.`)) {
@@ -6,20 +10,47 @@ export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDele
     }
   }
 
+  const filtered = docs.filter((d) =>
+    d.name.toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <aside className="sidebar">
-      <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">📄</div>
-        <div>
-          <div className="sidebar-logo-text">DocChat</div>
-          <div className="sidebar-logo-sub">Classic RAG · Level 1</div>
+      <div className="sidebar-header">
+        <div className="sidebar-title-row">
+          <div>
+            <div className="sidebar-logo-text">DocChat</div>
+            <div className="sidebar-logo-sub">Classic RAG · v1</div>
+          </div>
+          <button className="sidebar-new-btn" onClick={onAddDoc} title="Upload document">+</button>
+        </div>
+
+        <div className="sidebar-search">
+          <span className="sidebar-search-icon">🔍</span>
+          <input
+            placeholder="Search documents…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
       </div>
 
-      <div className="sidebar-section-label">Indexed Documents</div>
+      <div className="sidebar-section-label">
+        Indexed Documents
+        {docs.length > 0 && (
+          <span style={{ marginLeft: 6, color: 'var(--accent)', fontWeight: 700 }}>
+            ({docs.length})
+          </span>
+        )}
+      </div>
 
       <div className="sidebar-docs">
-        {docs.map((doc) => (
+        {filtered.length === 0 && search && (
+          <div style={{ padding: '12px 8px', fontSize: 12, color: 'var(--text-muted)', textAlign: 'center' }}>
+            No documents match "{search}"
+          </div>
+        )}
+        {filtered.map((doc) => (
           <div
             key={doc.id}
             className={`doc-item ${activeDoc?.id === doc.id ? 'active' : ''}`}
@@ -32,9 +63,9 @@ export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDele
               <div className="doc-name">{doc.name}</div>
               <div className="doc-meta">
                 {doc.type === 'pdf'
-                  ? `${doc.pages} pages`
-                  : `${doc.sheets} sheet${doc.sheets !== 1 ? 's' : ''}`}{' '}
-                · {doc.uploadedAt}
+                  ? `${doc.pages ?? '?'} pages`
+                  : `${doc.sheets ?? '?'} sheet${doc.sheets !== 1 ? 's' : ''}`}
+                {' · '}{doc.uploadedAt ?? ''}
               </div>
             </div>
             <div className={`doc-status ${doc.status}`} title={doc.status} />
@@ -51,7 +82,7 @@ export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDele
       </div>
 
       <button className="sidebar-add-btn" onClick={onAddDoc}>
-        <span style={{ fontSize: 16 }}>+</span> Add Document
+        <span style={{ fontSize: 18, lineHeight: 1 }}>+</span> Upload Document
       </button>
 
       <div className="sidebar-footer">

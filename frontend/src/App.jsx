@@ -10,6 +10,8 @@ export default function App() {
   const [showUpload, setShowUpload] = useState(false)
   const [activeDoc, setActiveDoc] = useState(null)
   const [isTyping, setIsTyping] = useState(false)
+  const [theme, setTheme] = useState('dark')
+  const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
 
   const docKey = activeDoc?.id ?? 'all'
   const messages = messagesByDoc[docKey] ?? []
@@ -66,12 +68,28 @@ export default function App() {
       uploadedAt: 'just now',
     }
     setDocs((prev) => [...prev, placeholder])
+    setActiveDoc(placeholder)
 
     try {
       const res = await fetch('/api/upload', { method: 'POST', body: formData })
       if (!res.ok) throw new Error(`Upload failed: ${res.status}`)
       const doc = await res.json()
       setDocs((prev) => prev.map((d) => (d.id === placeholder.id ? doc : d)))
+      setActiveDoc(doc)
+      setMessagesByDoc((prev) => ({
+        ...prev,
+        [doc.id]: [
+          ...(prev[doc.id] ?? []),
+          {
+            id: Date.now(),
+            role: 'system',
+            docName: doc.name,
+            docType: doc.type,
+            pages: doc.pages,
+            sheets: doc.sheets,
+          },
+        ],
+      }))
     } catch (err) {
       setDocs((prev) => prev.map((d) => (d.id === placeholder.id ? { ...d, status: 'failed' } : d)))
     }
@@ -89,7 +107,7 @@ export default function App() {
   }
 
   return (
-    <div className="app-root">
+    <div className={`app-root ${theme}`}>
       <Sidebar
         docs={docs}
         activeDoc={activeDoc}
@@ -104,6 +122,8 @@ export default function App() {
           onSend={handleSend}
           hasDocs={docs.length > 0}
           activeDoc={activeDoc}
+          theme={theme}
+          onToggleTheme={toggleTheme}
         />
       </main>
       {showUpload && (
