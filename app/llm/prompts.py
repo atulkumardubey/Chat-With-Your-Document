@@ -6,6 +6,8 @@ Rules:
 the answer in the uploaded documents. Do not guess or use outside knowledge.
 - Keep answers concise and directly address the question.
 - Do not mention "context" or "chunks" explicitly in your answer; just answer naturally.
+- Output ONLY the final answer. Never include your reasoning, thinking steps, analysis, or internal \
+thought process in your response.
 """
 
 CHART_CAPTION_PROMPT = """Describe this chart/image in detail as plain text so it can be used to \

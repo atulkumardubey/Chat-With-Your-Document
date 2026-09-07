@@ -73,10 +73,23 @@ CREATE TABLE IF NOT EXISTS chunks (
 );
 """
 
-# No ANN index (ivfflat/hnsw) is created: with an ivfflat index built on a near-empty table,
-# top-k queries silently return zero rows once data is added (the index's lists never get
-# retrained). At this app's scale (per-document chunk counts), an exact sequential scan on
-# `<=>` is fast enough and always correct, so we intentionally skip approximate indexing.
+INDEXES_SQL = """
+-- Drop the old IVFFlat index (broke on near-empty tables — lists never retrained).
+DROP INDEX IF EXISTS chunks_embedding_cosine_idx;
+
+-- Fast filter on document_id: every search query applies this predicate.
+CREATE INDEX IF NOT EXISTS chunks_document_id_idx
+    ON chunks (document_id);
+
+-- Sort order used by GET /api/documents.
+CREATE INDEX IF NOT EXISTS documents_uploaded_at_idx
+    ON documents (uploaded_at DESC);
+
+-- HNSW vector index for cosine similarity.
+-- Unlike IVFFlat, HNSW builds incrementally so it works correctly at any data size.
+CREATE INDEX IF NOT EXISTS chunks_embedding_hnsw_idx
+    ON chunks USING hnsw (embedding vector_cosine_ops);
+"""
 
 
 def init_schema() -> None:
@@ -85,7 +98,7 @@ def init_schema() -> None:
             cur.execute(DOCUMENTS_TABLE_SQL)
             cur.execute(ADD_ERROR_COLUMN_SQL)
             cur.execute(CHUNKS_TABLE_SQL)
-            cur.execute("DROP INDEX IF EXISTS chunks_embedding_cosine_idx")
+            cur.execute(INDEXES_SQL)
 
 
 if __name__ == "__main__":
