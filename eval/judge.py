@@ -9,13 +9,9 @@ import logging
 
 from app.config import settings
 from app.llm.nvidia_client import _client, _strip_thinking
+from app.retrieval.retriever import REFUSAL_MESSAGE
 
 logger = logging.getLogger(__name__)
-
-REFUSAL_MESSAGE = (
-    "I couldn't find anything in the uploaded documents that answers this question. "
-    "Please try rephrasing, or upload a document that covers this topic."
-)
 
 
 def judge_completion(system_prompt: str, user_prompt: str) -> str:
@@ -209,9 +205,10 @@ Provide your judgment as JSON."""
 
 
 def is_correct_refusal(answer: str) -> bool:
-    """Check if the answer correctly refuses an unanswerable question.
+    """Return True if the answer is the canonical refusal produced by the retriever.
 
-    A correct refusal matches or closely resembles REFUSAL_MESSAGE.
-    Returns True if the answer starts with the refusal message, False otherwise.
+    The eval pipeline now sets answer = REFUSAL_MESSAGE directly when the
+    similarity threshold is not met (mirroring retriever.py), so an exact
+    match is both correct and sufficient.
     """
-    return answer.strip().startswith(REFUSAL_MESSAGE.split(".")[0])
+    return answer.strip() == REFUSAL_MESSAGE.strip()

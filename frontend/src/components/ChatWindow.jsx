@@ -8,7 +8,7 @@ const FEATURE_CARDS = [
   { icon: '💡', title: 'Find Insights',         sub: 'Surface trends and recommendations',     prompt: 'What insights or recommendations are mentioned?' },
 ]
 
-export default function ChatWindow({ messages, isTyping, onSend, hasDocs, activeDoc, theme, onToggleTheme }) {
+export default function ChatWindow({ messages, isTyping, onSend, hasDocs, activeDoc, theme, onToggleTheme, onRunEval }) {
   const [input, setInput] = useState('')
   const bottomRef = useRef(null)
   const textareaRef = useRef(null)
@@ -42,6 +42,11 @@ export default function ChatWindow({ messages, isTyping, onSend, hasDocs, active
         <div className="chat-header-title">
           <h1>{activeDoc ? activeDoc.name : 'Chat With Your Document'}</h1>
           <span className="chat-header-badge">{activeDoc ? 'Scoped' : 'All Docs'}</span>
+          {activeDoc?.status === 'indexed' && (
+            <button className="run-eval-btn" onClick={onRunEval} title="Run RAG quality evaluation on this document">
+              🔬 Run Eval
+            </button>
+          )}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <div className="chat-header-info">

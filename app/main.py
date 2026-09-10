@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes_chat import router as chat_router
 from app.api.routes_documents import router as documents_router
+from app.api.routes_quality_gate import router as quality_gate_router
 from app.config import settings
 from app.db import init_schema
 
@@ -17,6 +18,7 @@ app.add_middleware(
 
 app.include_router(documents_router)
 app.include_router(chat_router)
+app.include_router(quality_gate_router)
 
 
 @app.on_event("startup")

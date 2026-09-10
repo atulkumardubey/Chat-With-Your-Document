@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Sidebar from './components/Sidebar'
 import ChatWindow from './components/ChatWindow'
 import UploadPanel from './components/UploadPanel'
+import QualityGateReport from './components/QualityGateReport'
+import EvalRunModal from './components/EvalRunModal'
 import './App.css'
 
 export default function App() {
@@ -11,6 +13,8 @@ export default function App() {
   const [activeDoc, setActiveDoc] = useState(null)
   const [isTyping, setIsTyping] = useState(false)
   const [theme, setTheme] = useState('dark')
+  const [showQualityGate, setShowQualityGate] = useState(false)
+  const [showEvalRun, setShowEvalRun] = useState(false)
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
 
   const docKey = activeDoc?.id ?? 'all'
@@ -143,6 +147,7 @@ export default function App() {
         onSelectDoc={setActiveDoc}
         onAddDoc={() => setShowUpload(true)}
         onDeleteDoc={handleDeleteDoc}
+        onOpenQualityGate={() => setShowQualityGate(true)}
       />
       <main className="main-area">
         <ChatWindow
@@ -153,10 +158,21 @@ export default function App() {
           activeDoc={activeDoc}
           theme={theme}
           onToggleTheme={toggleTheme}
+          onRunEval={() => setShowEvalRun(true)}
         />
       </main>
       {showUpload && (
         <UploadPanel onClose={() => setShowUpload(false)} onUpload={handleUpload} />
+      )}
+      {showQualityGate && (
+        <QualityGateReport onClose={() => setShowQualityGate(false)} />
+      )}
+      {showEvalRun && activeDoc && (
+        <EvalRunModal
+          doc={activeDoc}
+          onClose={() => setShowEvalRun(false)}
+          onViewReport={() => setShowQualityGate(true)}
+        />
       )}
     </div>
   )

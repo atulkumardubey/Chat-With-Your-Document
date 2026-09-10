@@ -73,14 +73,16 @@ def _classify_failure(result: dict[str, Any]) -> str:
 def evaluate_question(q: dict, document_id: int | None) -> dict:
     """Run one Q&A pair through the RAG pipeline and score it.
 
-    For answerable questions: scores faithfulness, answer_relevance,
-    context_precision, context_recall via LLM-as-judge.
+    Mirrors the same retrieval logic as retriever.retrieve_and_answer():
+    if no chunks are found or best_similarity < settings.similarity_threshold,
+    the answer is set to REFUSAL_MESSAGE — this is what the production system
+    does, so the eval must match it exactly.
 
-    For unanswerable questions (answerable=False): checks that the system
-    correctly refuses to answer.  Retrieval is deliberately un-scoped so the
-    system has every chance of finding something — a correct refusal under
-    those conditions is the strongest possible PASS.
+    Both answerable AND unanswerable questions are scoped to document_id so
+    that chunks from unrelated documents don't bleed into the test.
     """
+    from app.retrieval.retriever import REFUSAL_MESSAGE as _REFUSAL
+
     result: dict[str, Any] = {
         "question_id": q["id"],
         "question": q["question"],
@@ -92,13 +94,16 @@ def evaluate_question(q: dict, document_id: int | None) -> dict:
         "best_similarity": 0.0,
     }
     try:
-        scoped_id = document_id if q["answerable"] else None
         embedding = embed_query(q["question"])
-        chunks = search(embedding, top_k=settings.top_k, document_id=scoped_id)
+        chunks = search(embedding, top_k=settings.top_k, document_id=document_id)
         result["contexts"] = [c["content"] for c in chunks]
         result["best_similarity"] = chunks[0]["similarity"] if chunks else 0.0
 
-        answer = chat_completion(build_user_prompt(q["question"], result["contexts"]))
+        # Mirror the production threshold gate — below threshold → refuse, same as retriever.py
+        if not chunks or result["best_similarity"] < settings.similarity_threshold:
+            answer = _REFUSAL
+        else:
+            answer = chat_completion(build_user_prompt(q["question"], result["contexts"]))
         result["answer"] = answer
 
         if q["answerable"]:

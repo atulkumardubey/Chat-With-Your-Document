@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDeleteDoc }) {
+export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDeleteDoc, onOpenQualityGate }) {
   const [search, setSearch] = useState('')
 
   const handleDelete = (e, doc) => {
@@ -83,6 +83,15 @@ export default function Sidebar({ docs, activeDoc, onSelectDoc, onAddDoc, onDele
 
       <button className="sidebar-add-btn" onClick={onAddDoc}>
         <span style={{ fontSize: 18, lineHeight: 1 }}>+</span> Upload Document
+      </button>
+
+      <button className="sidebar-quality-gate-btn" onClick={onOpenQualityGate}>
+        <span className="sqg-icon">🔬</span>
+        <span className="sqg-label">
+          <span className="sqg-title">RAG Quality Gate</span>
+          <span className="sqg-sub">View eval report</span>
+        </span>
+        <span className="sqg-arrow">›</span>
       </button>
 
       <div className="sidebar-footer">
