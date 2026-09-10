@@ -16,6 +16,7 @@ import argparse
 import json
 import logging
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
@@ -101,10 +102,16 @@ def evaluate_question(q: dict, document_id: int | None) -> dict:
         result["answer"] = answer
 
         if q["answerable"]:
-            result["faithfulness"] = score_faithfulness(answer, result["contexts"])
-            result["answer_relevance"] = score_answer_relevance(q["question"], answer)
-            result["context_precision"] = score_context_precision(q["question"], result["contexts"])
-            result["context_recall"] = score_context_recall(q.get("reference", ""), result["contexts"])
+            # Run all 4 judge calls concurrently — they are fully independent.
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                fut_faithfulness = pool.submit(score_faithfulness, answer, result["contexts"])
+                fut_relevance    = pool.submit(score_answer_relevance, q["question"], answer)
+                fut_precision    = pool.submit(score_context_precision, q["question"], result["contexts"])
+                fut_recall       = pool.submit(score_context_recall, q.get("reference", ""), result["contexts"])
+            result["faithfulness"]      = fut_faithfulness.result()
+            result["answer_relevance"]  = fut_relevance.result()
+            result["context_precision"] = fut_precision.result()
+            result["context_recall"]    = fut_recall.result()
 
             result["all_passed"] = (
                 result["faithfulness"] >= THRESHOLDS["faithfulness"]
@@ -256,13 +263,30 @@ def cmd_evaluate(doc_id: int, questions_path: str | None) -> int:
         logger.info(f"Auto-generating Q&A pairs for: {doc['name']} (this may take a few minutes)...")
         golden_set = generate_qa_pairs(doc_id, n_answerable=16, n_unanswerable=4)
 
-    # Evaluate each question
-    logger.info(f"Running {len(golden_set)} questions through the RAG pipeline...")
-    results = []
-    for q in golden_set:
-        label = q["question"][:55] if q["answerable"] else f"[refusal] {q['question'][:45]}"
-        logger.info(f"  Q{q['id']:02d}: {label}...")
-        results.append(evaluate_question(q, doc_id))
+    # Evaluate questions concurrently (4 workers to avoid API rate limits).
+    # Each worker further parallelises its 4 judge calls, so peak concurrency = 4 × 4 = 16.
+    logger.info(f"Running {len(golden_set)} questions through the RAG pipeline (parallel)...")
+    results: list[dict] = [{}] * len(golden_set)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        future_to_idx = {
+            pool.submit(evaluate_question, q, doc_id): i
+            for i, q in enumerate(golden_set)
+        }
+        for fut in as_completed(future_to_idx):
+            idx = future_to_idx[fut]
+            q = golden_set[idx]
+            label = q["question"][:55] if q["answerable"] else f"[refusal] {q['question'][:45]}"
+            try:
+                results[idx] = fut.result()
+                logger.info(f"  Q{q['id']:02d} done: {label}")
+            except Exception as exc:
+                logger.error(f"  Q{q['id']:02d} failed: {exc}")
+                results[idx] = {
+                    "question_id": q["id"], "question": q["question"],
+                    "answerable": q["answerable"], "source_type": q.get("source_type", ""),
+                    "document_id": doc_id, "answer": None, "contexts": [],
+                    "best_similarity": 0.0, "all_passed": False, "error": str(exc),
+                }
 
     # Score, print, save
     metrics = _aggregate(results)

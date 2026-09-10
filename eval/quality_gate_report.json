@@ -1,0 +1,467 @@
+{
+  "verdict": "FIX",
+  "metrics": {
+    "faithfulness": 1.0,
+    "answer_relevance": 0.9444444444444444,
+    "context_precision": 0.2,
+    "context_recall": 0.8888888888888888,
+    "correct_refusal_rate": 0.0
+  },
+  "thresholds": {
+    "faithfulness": 0.7,
+    "answer_relevance": 0.7,
+    "context_precision": 0.6,
+    "context_recall": 0.6,
+    "correct_refusal_rate": 1.0
+  },
+  "summary": {
+    "total": 20,
+    "answerable": 18,
+    "unanswerable": 2,
+    "passed": 0,
+    "failed": 20
+  },
+  "mode": "document",
+  "document": {
+    "id": 23,
+    "name": "basic-understanding-of-a-companys-financials.pdf",
+    "type": "pdf",
+    "pages": 35,
+    "sheets": null,
+    "status": "indexed"
+  },
+  "questions_file": "eval/my_questions.json",
+  "results": [
+    {
+      "question_id": 1,
+      "question": "According to the simplified balance sheet, what is the value of Inventory under Current assets?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "60,000",
+      "contexts": [
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "Balance Sheet",
+        "Illustrative balance sheet (assets )\nCurrent\nAssets\n\u2022 Expected to be converted into\ncash in less than 1 year\n\u2022 Accounts receivable, inventory\nNon-current\nAssets\n\u2022 Expected to be held greater than\n1 year\n\u2022 Property, plant, and equipment\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 7",
+        "Assets\n\u2022 Expected to be converted into\ncash in less than 1 year\n\u2022 Accounts receivable, inventory",
+        "Assets\n\u2022 Expected to be converted into\ncash in less than 1 year\n\u2022 Accounts receivable, inventory"
+      ],
+      "best_similarity": 0.8090518940625374,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 2,
+      "question": "What is the total current assets amount in the simplified balance sheet?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "The total current assets amount in the simplified balance sheet is 94,000.",
+      "contexts": [
+        "Balance Sheet",
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "Illustrative balance sheet (assets )\nCurrent\nAssets\n\u2022 Expected to be converted into\ncash in less than 1 year\n\u2022 Accounts receivable, inventory\nNon-current\nAssets\n\u2022 Expected to be held greater than\n1 year\n\u2022 Property, plant, and equipment\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 7",
+        "Statement of Cash Flows",
+        "Balance sheet\nPwC | Basic Understanding of a Company's Financials 5"
+      ],
+      "best_similarity": 0.8347156643867493,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 3,
+      "question": "What is the value of Property plant & equipment under non-current assets?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "I cannot find the specific value of Property, plant & equipment under non-current assets in the provided documents. The context shows total non-current assets of 120,000 and intangible assets of 10,000, but does not provide a breakdown showing the individual value for Property, plant & equipment.",
+      "contexts": [
+        "Assets\n\u2022 Expected to be held greater\nthan 1 year\n\u2022 Property, plant, and equipment",
+        "Assets\n\u2022 Expected to be held greater than\n1 year\n\u2022 Property, plant, and equipment",
+        "Intangible assets 10,000 Total liabilities and 214,000 Non-current\nTotal non current assets 120,000 shareholders equity\nAssets\nTotal assets 214,000\n\u2022 Expected to be held greater\nthan 1 year\n\u2022 Property, plant, and equipment\nLiabilities\n\u2022 Repayment terms longer than\n1 year\n\u2022 Loan repayable over a 5 year\nSource CFI period\nPwC | Basic Understanding of a Company's Financials 6",
+        "Assets\n\tLiabilities\nAssets",
+        "Other assets\nGoodwill Intangible Asset Unearned/Differed Revenue\n\u2022 Non-current asset Intangible assets are items of value that are Unearned revenue arises when a company\n\u2022 Company has intangible Value used to generate revenues and have no sells something it has not yet delivered e.g.\nphysical substance. licenses, subscriptions 12 month\ne.g. brand, customers,intellectual capital\nsubscription sold for $1,200 in January:\nIf a company is purchased for more than\nthe fair value of net assets (assets less\nliabilities):\nTrademarks Earned: $100 $300 $600 $900 $1,200\nJan Mar Jun Sep Dec\nPurchase price X\nPatents\nUnearned$1,100 $900 $600 $300 $0\nFair value of net assets acquired (X)\nGoodwill X\nCopyrights\nSource CFI\nPwC | Basic Understanding of a Company's Financials 9"
+      ],
+      "best_similarity": 0.7638074159622192,
+      "faithfulness": 1.0,
+      "error": "Error code: 503 - {'error': {'message': 'Service temporarily overloaded', 'type': 'Service Unavailable', 'code': 503}}",
+      "all_passed": false
+    },
+    {
+      "question_id": 4,
+      "question": "What is the total assets amount in the simplified balance sheet?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "The total assets amount in the simplified balance sheet is 214,000.",
+      "contexts": [
+        "Balance Sheet",
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "Illustrative balance sheet (assets )\nCurrent\nAssets\n\u2022 Expected to be converted into\ncash in less than 1 year\n\u2022 Accounts receivable, inventory\nNon-current\nAssets\n\u2022 Expected to be held greater than\n1 year\n\u2022 Property, plant, and equipment\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 7",
+        "Balance sheet\nPwC | Basic Understanding of a Company's Financials 5",
+        "Assets\n\tLiabilities\nAssets"
+      ],
+      "best_similarity": 0.8432060480117798,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 5,
+      "question": "What is the value of Accounts payable under current liabilities?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "2,000",
+      "contexts": [
+        "Liabilities\n\u2022 Will be paid in less than 1 year\n\u2022 Trade accounts payable",
+        "Assets\n\tLiabilities\nAssets",
+        "Illustrative balance sheet (liabilities)\nCurrent\nLiabilities\n\u2022 Will be paid in less than 1 year\n\u2022 Trade accounts payable\nNon-current\nLiabilities\n\u2022 Repayment terms longer than 1\nyear\n\u2022 Loan repayable over a 5 year\nperiod\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 10",
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "\u2022 Will be paid in less than 1 year\n\u2022 Trade accounts payable"
+      ],
+      "best_similarity": 0.8060569051538068,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 6,
+      "question": "What is the value of the Bank loan in the simplified balance sheet?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "The Bank loan is valued at 100,000.",
+      "contexts": [
+        "Balance Sheet",
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "Balance sheet\nPwC | Basic Understanding of a Company's Financials 5",
+        "Statement of Cash Flows",
+        "Financial Instrument transactions"
+      ],
+      "best_similarity": 0.8142626285552979,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 7,
+      "question": "What is the value of Common shares under shareholder equity?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "I cannot find the specific value of Common shares under shareholder equity in the uploaded documents. The context references an \"Illustrative balance sheet (statement of shareholder's equity)\" but does not include the actual balance sheet figures. The numerical example provided shows paid-up share capital of $45,000 and contributed surplus of $27,000 for 180,000 shares, but it does not explicitly label this as common shares or provide a separate common shares line item value.",
+      "contexts": [
+        "Common vs preferred shares\nAuthorised shares\n\u2022 The total number of shares a\ncompany can sell\nOutstanding (Issued) shares\n\u2022 The total number of shares a\ncompany has sold/issued\nCommon shares Preferred shares\n\u2022 Allow for participation in the profits of the \u2022 Offer investors a fixed dividend\ncompany\n\u2013It may not be paid annually\n\u2013Comes in the form of a dividend\n\u2022 Will accumulate/pay before common share\n\u2022 Allow for voting rights in a company dividends\n\u2013One vote for every share held \u2022 Most businesses don\u2019t issue because they\nare viewed as debt with a tax disadvantage\n\u2022 If dissolved, any residual amount after\neveryone else is paid would go to the \u2013Dividends do not reduce taxable income\ncommon shareholders\nSee accompanying notes.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 13",
+        "Aspects of the equity\nContributed Surplus Other comprehensive income\nAspects of the Equity\nOther comprehensive income (OCI):\nContributed surplus \u2022 certain company gains and losses that are not always recorded\nthrough the income statement\ne.g. unrealised gains and losses on investments and hedging\nPar Receives\ninstruments\ne.g. 180,000 shares 40\u00a2/each 25\u00a2/par\nPaid-up share capital (180,000 x 25\u00a2) $45,000\nContributed surplus (180,000 x 15\u00a2) $27,000\nSource CFI\nPwC | Basic Understanding of a Company's Financials 14",
+        "Illustrative balance sheet (statement of shareholder\u2019s equity)\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 12",
+        "Sale of Investments",
+        "Basic understanding\nof a company\u2019s\nfinancial statements\nSeptember 2020"
+      ],
+      "best_similarity": 0.7556439479034054,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 8,
+      "question": "What is the value of Retained Earnings in the simplified balance sheet?",
+      "answerable": true,
+      "source_type": "pdf_page_6",
+      "document_id": 23,
+      "answer": "Retained Earnings is 11,000.",
+      "contexts": [
+        "Balance Sheet",
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "Balance sheet\nPwC | Basic Understanding of a Company's Financials 5",
+        "non-current.\nIncome Statement The income statement covers a period of time, such as a quarter or\nyear. It illustrates the profitability of the company from an accounting\n(accrual and matching) perspective. It starts with the revenue line and\n\u2022 Statement of operation/profit and loss\nafter deducting expenses derives net income.\nStatement of Cash Flows The cash flow statement look at the cash position of the company .\nIt answers it answers the questions ; How much of the organisation\u2019s\ncash goes to its creditors and shareholders? Does it keep enough for\nits own investment and growth? has 3 components cash from\noperations, cash used in investing, and cash from financing. It\n\u201cundoes\u201d all of the accounting principles and shows the cash flows of\nthe business.\nSource CFI",
+        "The financial statements\nFinancial statements are written records that illustrates the business activities and the financial performance of a company. In\nmost cases they are audited to ensure accuracy for tax, financing, or investing purposes.\nA methodically work through of the three financial statements in order to assess the Financial health of a company.\nBalance Sheet is a snapshot at a point in time. On the top half you\nBalance Sheet\nhave the company\u2019s assets and on the bottom half its liabilities and\nShareholders\u2019 Equity (or Net Worth). The assets and liabilities are\n\u2022 Statement of financial position typically listed in order of liquidity and separated between current and\nnon-current.\nIncome Statement The income statement covers a period of time, such as a quarter or"
+      ],
+      "best_similarity": 0.8014759421348572,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 9,
+      "question": "For a 12 month subscription sold for $1,200 in January, how much revenue has been earned by June?",
+      "answerable": true,
+      "source_type": "pdf_page_9",
+      "document_id": 23,
+      "answer": "$600",
+      "contexts": [
+        "Revenues",
+        "Other assets\nGoodwill Intangible Asset Unearned/Differed Revenue\n\u2022 Non-current asset Intangible assets are items of value that are Unearned revenue arises when a company\n\u2022 Company has intangible Value used to generate revenues and have no sells something it has not yet delivered e.g.\nphysical substance. licenses, subscriptions 12 month\ne.g. brand, customers,intellectual capital\nsubscription sold for $1,200 in January:\nIf a company is purchased for more than\nthe fair value of net assets (assets less\nliabilities):\nTrademarks Earned: $100 $300 $600 $900 $1,200\nJan Mar Jun Sep Dec\nPurchase price X\nPatents\nUnearned$1,100 $900 $600 $300 $0\nFair value of net assets acquired (X)\nGoodwill X\nCopyrights\nSource CFI\nPwC | Basic Understanding of a Company's Financials 9",
+        "\u2022 Will be paid in less than 1 year\n\u2022 Trade accounts payable",
+        "Income Statement",
+        "Sale of Investments"
+      ],
+      "best_similarity": 0.6538500396102654,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 10,
+      "question": "For a 12 month subscription sold for $1,200 in January, how much unearned revenue remains in September?",
+      "answerable": true,
+      "source_type": "pdf_page_9",
+      "document_id": 23,
+      "answer": "$300",
+      "contexts": [
+        "Other assets\nGoodwill Intangible Asset Unearned/Differed Revenue\n\u2022 Non-current asset Intangible assets are items of value that are Unearned revenue arises when a company\n\u2022 Company has intangible Value used to generate revenues and have no sells something it has not yet delivered e.g.\nphysical substance. licenses, subscriptions 12 month\ne.g. brand, customers,intellectual capital\nsubscription sold for $1,200 in January:\nIf a company is purchased for more than\nthe fair value of net assets (assets less\nliabilities):\nTrademarks Earned: $100 $300 $600 $900 $1,200\nJan Mar Jun Sep Dec\nPurchase price X\nPatents\nUnearned$1,100 $900 $600 $300 $0\nFair value of net assets acquired (X)\nGoodwill X\nCopyrights\nSource CFI\nPwC | Basic Understanding of a Company's Financials 9",
+        "Revenues",
+        "Basic understanding\nof a company\u2019s\nfinancial statements\nSeptember 2020",
+        "\u2022 Will be paid in less than 1 year\n\u2022 Trade accounts payable",
+        "Expenses"
+      ],
+      "best_similarity": 0.6595687866210938,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 11,
+      "question": "What term refers to the total number of shares a company can sell?",
+      "answerable": true,
+      "source_type": "pdf_page_13",
+      "document_id": 23,
+      "answer": "Authorised shares",
+      "contexts": [
+        "Common vs preferred shares\nAuthorised shares\n\u2022 The total number of shares a\ncompany can sell\nOutstanding (Issued) shares\n\u2022 The total number of shares a\ncompany has sold/issued\nCommon shares Preferred shares\n\u2022 Allow for participation in the profits of the \u2022 Offer investors a fixed dividend\ncompany\n\u2013It may not be paid annually\n\u2013Comes in the form of a dividend\n\u2022 Will accumulate/pay before common share\n\u2022 Allow for voting rights in a company dividends\n\u2013One vote for every share held \u2022 Most businesses don\u2019t issue because they\nare viewed as debt with a tax disadvantage\n\u2022 If dissolved, any residual amount after\neveryone else is paid would go to the \u2013Dividends do not reduce taxable income\ncommon shareholders\nSee accompanying notes.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 13",
+        "The financial statements\nFinancial statements are written records that illustrates the business activities and the financial performance of a company. In\nmost cases they are audited to ensure accuracy for tax, financing, or investing purposes.\nA methodically work through of the three financial statements in order to assess the Financial health of a company.\nBalance Sheet is a snapshot at a point in time. On the top half you\nBalance Sheet\nhave the company\u2019s assets and on the bottom half its liabilities and\nShareholders\u2019 Equity (or Net Worth). The assets and liabilities are\n\u2022 Statement of financial position typically listed in order of liquidity and separated between current and\nnon-current.\nIncome Statement The income statement covers a period of time, such as a quarter or",
+        "Illustrative balance sheet (statement of shareholder\u2019s equity)\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 12",
+        "Intangible assets 10,000 Total liabilities and 214,000 Non-current\nTotal non current assets 120,000 shareholders equity\nAssets\nTotal assets 214,000\n\u2022 Expected to be held greater\nthan 1 year\n\u2022 Property, plant, and equipment\nLiabilities\n\u2022 Repayment terms longer than\n1 year\n\u2022 Loan repayable over a 5 year\nSource CFI period\nPwC | Basic Understanding of a Company's Financials 6",
+        "\u2022 Efficiency ( \u2022 Operating cash flow/Dividends paid\n\u2022 Operating cash flow/Operating profit\nPwC | Basic Understanding of a Company's Financials 31"
+      ],
+      "best_similarity": 0.713132219723928,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 12,
+      "question": "What type of shares allow for voting rights in a company with one vote for every share held?",
+      "answerable": true,
+      "source_type": "pdf_page_13",
+      "document_id": 23,
+      "answer": "Common shares allow for voting rights in a company with one vote for every share held.",
+      "contexts": [
+        "Common vs preferred shares\nAuthorised shares\n\u2022 The total number of shares a\ncompany can sell\nOutstanding (Issued) shares\n\u2022 The total number of shares a\ncompany has sold/issued\nCommon shares Preferred shares\n\u2022 Allow for participation in the profits of the \u2022 Offer investors a fixed dividend\ncompany\n\u2013It may not be paid annually\n\u2013Comes in the form of a dividend\n\u2022 Will accumulate/pay before common share\n\u2022 Allow for voting rights in a company dividends\n\u2013One vote for every share held \u2022 Most businesses don\u2019t issue because they\nare viewed as debt with a tax disadvantage\n\u2022 If dissolved, any residual amount after\neveryone else is paid would go to the \u2013Dividends do not reduce taxable income\ncommon shareholders\nSee accompanying notes.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 13",
+        "Illustrative balance sheet (statement of shareholder\u2019s equity)\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 12",
+        "Sale of Investments",
+        "Basic understanding\nof a company\u2019s\nfinancial statements\nSeptember 2020",
+        "Cash and investments\nCash and Investments\nA company will hold external investments for two reasons:\n\u2022 Excess cash\n\u2022 Accumulating cash to make a large purchase\nA company can also make internal investments\n\u2022 Investments in equity or \u2022 Investment in subsidiaries,\ndebt instruments to be associates and joint\nheld for capital gain and/or ventures\nincome\nExternal Internal\ninvestments investments\nShort term Long term\n\u2022 (less than year) \u2022 (more than year)\nPwC | Basic Understanding of a Company's Financials Source CFI 888"
+      ],
+      "best_similarity": 0.719369444922275,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 13,
+      "question": "How many shares are used in the equity example showing paid-up share capital and contributed surplus?",
+      "answerable": true,
+      "source_type": "pdf_page_14",
+      "document_id": 23,
+      "answer": "180,000 shares",
+      "contexts": [
+        "Aspects of the equity\nContributed Surplus Other comprehensive income\nAspects of the Equity\nOther comprehensive income (OCI):\nContributed surplus \u2022 certain company gains and losses that are not always recorded\nthrough the income statement\ne.g. unrealised gains and losses on investments and hedging\nPar Receives\ninstruments\ne.g. 180,000 shares 40\u00a2/each 25\u00a2/par\nPaid-up share capital (180,000 x 25\u00a2) $45,000\nContributed surplus (180,000 x 15\u00a2) $27,000\nSource CFI\nPwC | Basic Understanding of a Company's Financials 14",
+        "Common vs preferred shares\nAuthorised shares\n\u2022 The total number of shares a\ncompany can sell\nOutstanding (Issued) shares\n\u2022 The total number of shares a\ncompany has sold/issued\nCommon shares Preferred shares\n\u2022 Allow for participation in the profits of the \u2022 Offer investors a fixed dividend\ncompany\n\u2013It may not be paid annually\n\u2013Comes in the form of a dividend\n\u2022 Will accumulate/pay before common share\n\u2022 Allow for voting rights in a company dividends\n\u2013One vote for every share held \u2022 Most businesses don\u2019t issue because they\nare viewed as debt with a tax disadvantage\n\u2022 If dissolved, any residual amount after\neveryone else is paid would go to the \u2013Dividends do not reduce taxable income\ncommon shareholders\nSee accompanying notes.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 13",
+        "Intangible assets 10,000 Total liabilities and 214,000 Non-current\nTotal non current assets 120,000 shareholders equity\nAssets\nTotal assets 214,000\n\u2022 Expected to be held greater\nthan 1 year\n\u2022 Property, plant, and equipment\nLiabilities\n\u2022 Repayment terms longer than\n1 year\n\u2022 Loan repayable over a 5 year\nSource CFI period\nPwC | Basic Understanding of a Company's Financials 6",
+        "requirement/surplus\ninjections of external finance.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 28",
+        "Illustrative balance sheet (statement of shareholder\u2019s equity)\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 12"
+      ],
+      "best_similarity": 0.7773610618876146,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 14,
+      "question": "What is the paid-up share capital in the equity example?",
+      "answerable": true,
+      "source_type": "pdf_page_14",
+      "document_id": 23,
+      "answer": "The paid-up share capital in the equity example is $45,000 (calculated as 180,000 shares \u00d7 25\u00a2 par value).",
+      "contexts": [
+        "Aspects of the equity\nContributed Surplus Other comprehensive income\nAspects of the Equity\nOther comprehensive income (OCI):\nContributed surplus \u2022 certain company gains and losses that are not always recorded\nthrough the income statement\ne.g. unrealised gains and losses on investments and hedging\nPar Receives\ninstruments\ne.g. 180,000 shares 40\u00a2/each 25\u00a2/par\nPaid-up share capital (180,000 x 25\u00a2) $45,000\nContributed surplus (180,000 x 15\u00a2) $27,000\nSource CFI\nPwC | Basic Understanding of a Company's Financials 14",
+        "Common vs preferred shares\nAuthorised shares\n\u2022 The total number of shares a\ncompany can sell\nOutstanding (Issued) shares\n\u2022 The total number of shares a\ncompany has sold/issued\nCommon shares Preferred shares\n\u2022 Allow for participation in the profits of the \u2022 Offer investors a fixed dividend\ncompany\n\u2013It may not be paid annually\n\u2013Comes in the form of a dividend\n\u2022 Will accumulate/pay before common share\n\u2022 Allow for voting rights in a company dividends\n\u2013One vote for every share held \u2022 Most businesses don\u2019t issue because they\nare viewed as debt with a tax disadvantage\n\u2022 If dissolved, any residual amount after\neveryone else is paid would go to the \u2013Dividends do not reduce taxable income\ncommon shareholders\nSee accompanying notes.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 13",
+        "Key elements in a cash flow statement\nNet cash provided by Represents operating \u2018lifeblood\u2019 of business after paying necessary outgoings for financing\noperating activities and tax\nShows whether business is absorbing funds for working capital or releasing them. Trend\nChanges in working capital\nmay indicate ether financial stress or loose control over working capital\nCompanies must invest in PPE to maintain their productive capacity.\nPPE Investment A downward trend may indicate a declining company. Identify the necessary sustainable\nlevel of expenditure.\nShows whether internally generated funds are sufficient to cover investments made in fixed\nFinancing\nassets and businesses. Continuous deficits indicate that growth depends on regular\nrequirement/surplus\ninjections of external finance.",
+        "Cash and investments\nCash and Investments\nA company will hold external investments for two reasons:\n\u2022 Excess cash\n\u2022 Accumulating cash to make a large purchase\nA company can also make internal investments\n\u2022 Investments in equity or \u2022 Investment in subsidiaries,\ndebt instruments to be associates and joint\nheld for capital gain and/or ventures\nincome\nExternal Internal\ninvestments investments\nShort term Long term\n\u2022 (less than year) \u2022 (more than year)\nPwC | Basic Understanding of a Company's Financials Source CFI 888",
+        "The cash flow statement\nStatement of cash flows demonstrates:\n\u2022 Where cash is being generated\n\u2022 Where cash is being used in the business Day-to-day business operations;\nRevenues and expenses that have been\ncollected and paid during the year\nOperating\nDepreciation and amortisation are not included.\nNon-current assets that support the business:\nInvesting \u2022 Property, plant and equipment\n\u2022 Business acquisitions\nFinancing Transactions regarding shares or debt.\nCompany raises funds by either borrowing or\nissuing shares.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 25"
+      ],
+      "best_similarity": 0.7359754600539542,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 15,
+      "question": "What are the three main sections of the income statement?",
+      "answerable": true,
+      "source_type": "pdf_page_17",
+      "document_id": 23,
+      "answer": "The three main sections of the income statement are Revenues, Expenses, and Profit or loss.",
+      "contexts": [
+        "Income Statement\nThe Income statement has 3 main sections:\nRevenues\nExpenses\nProfit or loss\nPwC | Basic Understanding of a Company's Financials 17",
+        "Income Statement",
+        "Table of contents\nWhat are financial statements? 3\nBalance sheet 5\nIncome statement 16\nCashflow statement 24\nPwC | Basic Understanding of a Company's Financials 22",
+        "non-current.\nIncome Statement The income statement covers a period of time, such as a quarter or\nyear. It illustrates the profitability of the company from an accounting\n(accrual and matching) perspective. It starts with the revenue line and\n\u2022 Statement of operation/profit and loss\nafter deducting expenses derives net income.\nStatement of Cash Flows The cash flow statement look at the cash position of the company .\nIt answers it answers the questions ; How much of the organisation\u2019s\ncash goes to its creditors and shareholders? Does it keep enough for\nits own investment and growth? has 3 components cash from\noperations, cash used in investing, and cash from financing. It\n\u201cundoes\u201d all of the accounting principles and shows the cash flows of\nthe business.\nSource CFI",
+        "The financial statements\nFinancial statements are written records that illustrates the business activities and the financial performance of a company. In\nmost cases they are audited to ensure accuracy for tax, financing, or investing purposes.\nA methodically work through of the three financial statements in order to assess the Financial health of a company.\nBalance Sheet is a snapshot at a point in time. On the top half you\nBalance Sheet\nhave the company\u2019s assets and on the bottom half its liabilities and\nShareholders\u2019 Equity (or Net Worth). The assets and liabilities are\n\u2022 Statement of financial position typically listed in order of liquidity and separated between current and\nnon-current.\nIncome Statement The income statement covers a period of time, such as a quarter or"
+      ],
+      "best_similarity": 0.8750791549682617,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.4,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "unknown"
+    },
+    {
+      "question_id": 16,
+      "question": "What are the three activity types used to sort transactions in the statement of cash flows?",
+      "answerable": true,
+      "source_type": "pdf_page_26",
+      "document_id": 23,
+      "answer": "Operating, Investing, and Financing",
+      "contexts": [
+        "Statement of Cash Flows\nThe transactions are sorted by activity type:\nOperating\nThe closing cash balance\nInvesting\nAll cash transactions\nFinancing\nThe opening cash balance\nSource CFI\nPwC | Basic Understanding of a Company's Financials 26",
+        "Statement of Cash Flows",
+        "Financial Instrument transactions",
+        "The financial statements\nFinancial statements are written records that illustrates the business activities and the financial performance of a company. In\nmost cases they are audited to ensure accuracy for tax, financing, or investing purposes.\nA methodically work through of the three financial statements in order to assess the Financial health of a company.\nBalance Sheet is a snapshot at a point in time. On the top half you\nBalance Sheet\nhave the company\u2019s assets and on the bottom half its liabilities and\nShareholders\u2019 Equity (or Net Worth). The assets and liabilities are\n\u2022 Statement of financial position typically listed in order of liquidity and separated between current and\nnon-current.\nIncome Statement The income statement covers a period of time, such as a quarter or",
+        "Table of contents\nWhat are financial statements? 3\nBalance sheet 5\nIncome statement 16\nCashflow statement 24\nPwC | Basic Understanding of a Company's Financials 22"
+      ],
+      "best_similarity": 0.8506325065335684,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 17,
+      "question": "What does the indirect method of cash flow start with?",
+      "answerable": true,
+      "source_type": "pdf_page_27",
+      "document_id": 23,
+      "answer": "The indirect method of cash flow starts with net income.",
+      "contexts": [
+        "Direct method vs Indirect method\nDirect method Indirect method\nDirect method of cash flow starts with cash transactions. Indirect method of cash flow starts with net income.\n(Transactions are separated into cash received and cash (Non-cash adjustments are then added.)\npaid.)\nSource CFI\nPwC | Basic Understanding of a Company's Financials 27",
+        "Statement of Cash Flows",
+        "The cash flow statement\nStatement of cash flows demonstrates:\n\u2022 Where cash is being generated\n\u2022 Where cash is being used in the business Day-to-day business operations;\nRevenues and expenses that have been\ncollected and paid during the year\nOperating\nDepreciation and amortisation are not included.\nNon-current assets that support the business:\nInvesting \u2022 Property, plant and equipment\n\u2022 Business acquisitions\nFinancing Transactions regarding shares or debt.\nCompany raises funds by either borrowing or\nissuing shares.\nSource CFI\nPwC | Basic Understanding of a Company's Financials 25",
+        "Three Key Financial Statements Notes\nSignificant Accounting Policies Direct Information Indirect Information\nIndirect Information\nNotes of indirect information:\n\u2022 Help provide the entire financial picture of\nCompany How inventory & an organisation\nA breakdown of the Debt and financial\naccounting investments are\ntypes of investments instruments \u2022 Not related to the numbers in the financial\nstandards valued\nstatements\nWhat is included in:\nFinancial Revenue is\ninstruments recognized\nInventory Intangible assets Commitments Contingencies\nStock based\nPP&E Income taxes\ncompensation plans\nProperty, plant & Any other\nequipment is policies\namortized\nSource CFI\nPwC | Basic Understanding of a Company's Financials 30",
+        "Statement of Cash Flows\nThe transactions are sorted by activity type:\nOperating\nThe closing cash balance\nInvesting\nAll cash transactions\nFinancing\nThe opening cash balance\nSource CFI\nPwC | Basic Understanding of a Company's Financials 26"
+      ],
+      "best_similarity": 0.9117990188718443,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 18,
+      "question": "What ratio is defined as Current assets divided by Current liabilities?",
+      "answerable": true,
+      "source_type": "pdf_page_31",
+      "document_id": 23,
+      "answer": "The Current ratio is defined as Current assets divided by Current liabilities.",
+      "contexts": [
+        "Assets\n\tLiabilities\nAssets",
+        "Balance sheet\nThe Balance sheet has Simplified Balance Sheet Current vs non-current\n3 main categories: Current\nAssets Liabilities\nCurrent assets Current liabilities Assets\nAssets Cash 20,000 Accounts payable 2,000 \u2022 Expected to be converted into\nAccounts receivable 3,000 Accrued expenses 1,000 cash in less than 1 year\nInventory 60,000 Total current liabilities 3,000 \u2022 Accounts receivable, inventory\nLiabilities\nAssets Prepaid expenses 11,000 Non current liabilities 11,000\nTotal current assets 94,000 Bank loan 100,000 Liabilities\nEquity\nNon current assets Shareholder equity \u2022 Will be paid in less than 1 year\nProperty plant & 110,000 Common shares 89,000 \u2022 Trade accounts payable\nequipment Retained Earnings 11,000\nIntangible assets 10,000 Total liabilities and 214,000 Non-current",
+        "Ratio Analysis\nThe Ratio analysis is a quantitative method of gaining insight into a company's liquidity, operational efficiency, and profitability by studying its\nfinancial statements such as the balance sheet and income statement. Ratio analysis is a cornerstone of fundamental equity analysis.\nPerformance Ratio Solvency Ratios Investor Ratios\n\u2022 Net Profit margin, \u2022 Solvency Ratios \u2022 Dividend yield,\n\u2022 return on assets (ROA) \u2022 Current ratio= Current assets/Current \u2022 P/E ratio,\n\u2022 return on equity(ROE) liabilities \u2022 earnings per share (EPS),\n\u2022 return on capital employed (ROCE), \u2022 Leverage or Gearing \u2022 dividend payout ratio\n\u2022 gross margin ratios \u2022 Operating cash flow/Interest paid\n\u2022 Efficiency ( \u2022 Operating cash flow/Dividends paid\n\u2022 Operating cash flow/Operating profit",
+        "The financial statements\nFinancial statements are written records that illustrates the business activities and the financial performance of a company. In\nmost cases they are audited to ensure accuracy for tax, financing, or investing purposes.\nA methodically work through of the three financial statements in order to assess the Financial health of a company.\nBalance Sheet is a snapshot at a point in time. On the top half you\nBalance Sheet\nhave the company\u2019s assets and on the bottom half its liabilities and\nShareholders\u2019 Equity (or Net Worth). The assets and liabilities are\n\u2022 Statement of financial position typically listed in order of liquidity and separated between current and\nnon-current.\nIncome Statement The income statement covers a period of time, such as a quarter or",
+        "Intangible assets 10,000 Total liabilities and 214,000 Non-current\nTotal non current assets 120,000 shareholders equity\nAssets\nTotal assets 214,000\n\u2022 Expected to be held greater\nthan 1 year\n\u2022 Property, plant, and equipment\nLiabilities\n\u2022 Repayment terms longer than\n1 year\n\u2022 Loan repayable over a 5 year\nSource CFI period\nPwC | Basic Understanding of a Company's Financials 6"
+      ],
+      "best_similarity": 0.794643759727478,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 19,
+      "question": "What was the company's total revenue for 2019?",
+      "answerable": false,
+      "source_type": "refusal",
+      "document_id": 23,
+      "answer": "I cannot find the company's total revenue for 2019 in the uploaded documents. The provided context only contains section headings (Revenues, Income Statement, Statement of Cash Flows, Expenses) without any actual financial data or figures.",
+      "contexts": [
+        "Revenues",
+        "Basic understanding\nof a company\u2019s\nfinancial statements\nSeptember 2020",
+        "Income Statement",
+        "Statement of Cash Flows",
+        "Expenses"
+      ],
+      "best_similarity": 0.7986071825857664,
+      "is_correct_refusal": false,
+      "all_passed": false,
+      "failure_type": "incorrect_answer_to_unanswerable"
+    },
+    {
+      "question_id": 20,
+      "question": "Who is the CEO of the company discussed in the document?",
+      "answerable": false,
+      "source_type": "refusal",
+      "document_id": 23,
+      "answer": "The document does not mention any specific company or its CEO. It is a general educational guide from PwC about understanding financial statements.",
+      "contexts": [
+        "Basic understanding\nof a company\u2019s\nfinancial statements\nSeptember 2020",
+        "Basic understandi\nof a company\u2019s\nfinancial statemen\nSeptember 2020\tng\nts",
+        "Illustrative balance sheet (statement of shareholder\u2019s equity)\nSee accompanying notes.\nPwC | Basic Understanding of a Company's Financials 12",
+        "The financial statements\nFinancial statements are written records that illustrates the business activities and the financial performance of a company. In\nmost cases they are audited to ensure accuracy for tax, financing, or investing purposes.\nA methodically work through of the three financial statements in order to assess the Financial health of a company.\nBalance Sheet is a snapshot at a point in time. On the top half you\nBalance Sheet\nhave the company\u2019s assets and on the bottom half its liabilities and\nShareholders\u2019 Equity (or Net Worth). The assets and liabilities are\n\u2022 Statement of financial position typically listed in order of liquidity and separated between current and\nnon-current.\nIncome Statement The income statement covers a period of time, such as a quarter or",
+        "What are financial\nstatements?\nPwC | Basic Understanding of a Company's Financials 3"
+      ],
+      "best_similarity": 0.6703085499818009,
+      "is_correct_refusal": false,
+      "all_passed": false,
+      "failure_type": "incorrect_answer_to_unanswerable"
+    }
+  ]
+}
