@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "question": "According to the simplified balance sheet, what is the value of Inventory under Current assets?",
+    "reference": "Inventory 60,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 2,
+    "question": "What is the total current assets amount in the simplified balance sheet?",
+    "reference": "Total current assets 94,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 3,
+    "question": "What is the value of Property plant & equipment under non-current assets?",
+    "reference": "Property plant & equipment 110,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 4,
+    "question": "What is the total assets amount in the simplified balance sheet?",
+    "reference": "Total assets 214,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 5,
+    "question": "What is the value of Accounts payable under current liabilities?",
+    "reference": "Accounts payable 2,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 6,
+    "question": "What is the value of the Bank loan in the simplified balance sheet?",
+    "reference": "Bank loan 100,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 7,
+    "question": "What is the value of Common shares under shareholder equity?",
+    "reference": "Common shares 89,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 8,
+    "question": "What is the value of Retained Earnings in the simplified balance sheet?",
+    "reference": "Retained Earnings 11,000",
+    "source_type": "pdf_page_6",
+    "answerable": true
+  },
+  {
+    "id": 9,
+    "question": "For a 12 month subscription sold for $1,200 in January, how much revenue has been earned by June?",
+    "reference": "Earned: $100 $300 $600 $900 $1,200",
+    "source_type": "pdf_page_9",
+    "answerable": true
+  },
+  {
+    "id": 10,
+    "question": "For a 12 month subscription sold for $1,200 in January, how much unearned revenue remains in September?",
+    "reference": "Unearned $1,100 $900 $600 $300 $0",
+    "source_type": "pdf_page_9",
+    "answerable": true
+  },
+  {
+    "id": 11,
+    "question": "What term refers to the total number of shares a company can sell?",
+    "reference": "Authorised shares • The total number of shares a company can sell",
+    "source_type": "pdf_page_13",
+    "answerable": true
+  },
+  {
+    "id": 12,
+    "question": "What type of shares allow for voting rights in a company with one vote for every share held?",
+    "reference": "Common shares • Allow for voting rights in a company – One vote for every share held",
+    "source_type": "pdf_page_13",
+    "answerable": true
+  },
+  {
+    "id": 13,
+    "question": "How many shares are used in the equity example showing paid-up share capital and contributed surplus?",
+    "reference": "e.g. 180,000 shares 40¢/each 25¢/par",
+    "source_type": "pdf_page_14",
+    "answerable": true
+  },
+  {
+    "id": 14,
+    "question": "What is the paid-up share capital in the equity example?",
+    "reference": "Paid-up share capital (180,000 x 25¢) $45,000",
+    "source_type": "pdf_page_14",
+    "answerable": true
+  },
+  {
+    "id": 15,
+    "question": "What are the three main sections of the income statement?",
+    "reference": "The Income statement has 3 main sections: Revenues, Expenses, Profit or loss",
+    "source_type": "pdf_page_17",
+    "answerable": true
+  },
+  {
+    "id": 16,
+    "question": "What are the three activity types used to sort transactions in the statement of cash flows?",
+    "reference": "The transactions are sorted by activity type: Operating, Investing, Financing",
+    "source_type": "pdf_page_26",
+    "answerable": true
+  },
+  {
+    "id": 17,
+    "question": "What does the indirect method of cash flow start with?",
+    "reference": "Indirect method of cash flow starts with net income.",
+    "source_type": "pdf_page_27",
+    "answerable": true
+  },
+  {
+    "id": 18,
+    "question": "What ratio is defined as Current assets divided by Current liabilities?",
+    "reference": "Current ratio = Current assets / Current liabilities",
+    "source_type": "pdf_page_31",
+    "answerable": true
+  },
+  {
+    "id": 19,
+    "question": "What was the company's total revenue for 2019?",
+    "reference": null,
+    "source_type": "refusal",
+    "answerable": false
+  },
+  {
+    "id": 20,
+    "question": "Who is the CEO of the company discussed in the document?",
+    "reference": null,
+    "source_type": "refusal",
+    "answerable": false
+  }
+]
