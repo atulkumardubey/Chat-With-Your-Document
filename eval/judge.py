@@ -9,7 +9,7 @@ import logging
 
 from app.config import settings
 from app.llm.nvidia_client import _client, _strip_thinking
-from app.retrieval.retriever import REFUSAL_MESSAGE
+from app.llm.prompts import REFUSAL_MESSAGE
 
 logger = logging.getLogger(__name__)
 

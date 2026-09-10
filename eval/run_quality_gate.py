@@ -81,7 +81,7 @@ def evaluate_question(q: dict, document_id: int | None) -> dict:
     Both answerable AND unanswerable questions are scoped to document_id so
     that chunks from unrelated documents don't bleed into the test.
     """
-    from app.retrieval.retriever import REFUSAL_MESSAGE as _REFUSAL
+    from app.llm.prompts import REFUSAL_MESSAGE as _REFUSAL
 
     result: dict[str, Any] = {
         "question_id": q["id"],

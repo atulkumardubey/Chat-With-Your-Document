@@ -1,12 +1,7 @@
 from app.config import settings
 from app.ingestion.embedder import embed_query
-from app.llm.prompts import build_user_prompt
+from app.llm.prompts import REFUSAL_MESSAGE, build_user_prompt
 from app.retrieval.vector_store import search
-
-REFUSAL_MESSAGE = (
-    "I couldn't find anything in the uploaded documents that answers this question. "
-    "Please try rephrasing, or upload a document that covers this topic."
-)
 
 
 def _to_citation(row: dict) -> dict:
