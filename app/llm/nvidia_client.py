@@ -59,5 +59,6 @@ def caption_image(image_bytes: bytes, mime_type: str = "image/png") -> str:
             }
         ],
         temperature=0.2,
+        timeout=45.0,  # Hard ceiling per image — prevents one slow API call from blocking ingestion
     )
     return response.choices[0].message.content or ""

@@ -70,28 +70,57 @@ export default function App() {
     setDocs((prev) => [...prev, placeholder])
     setActiveDoc(placeholder)
 
+    let doc
     try {
+      // POST /api/upload returns immediately with status='indexing'.
+      // Heavy work (parse → chunk → embed → store) runs in a background task on the server.
       const res = await fetch('/api/upload', { method: 'POST', body: formData })
       if (!res.ok) throw new Error(`Upload failed: ${res.status}`)
-      const doc = await res.json()
-      setDocs((prev) => prev.map((d) => (d.id === placeholder.id ? doc : d)))
-      setActiveDoc(doc)
-      setMessagesByDoc((prev) => ({
-        ...prev,
-        [doc.id]: [
-          ...(prev[doc.id] ?? []),
-          {
-            id: Date.now(),
-            role: 'system',
-            docName: doc.name,
-            docType: doc.type,
-            pages: doc.pages,
-            sheets: doc.sheets,
-          },
-        ],
-      }))
+      doc = await res.json()
     } catch (err) {
       setDocs((prev) => prev.map((d) => (d.id === placeholder.id ? { ...d, status: 'failed' } : d)))
+      return
+    }
+
+    // Replace placeholder immediately so the doc ID is correct.
+    setDocs((prev) => prev.map((d) => (d.id === placeholder.id ? doc : d)))
+    setActiveDoc(doc)
+
+    // Poll until the server finishes indexing (or fails).
+    const MAX_POLLS = 60          // up to 5 minutes (60 × 5 s)
+    const POLL_INTERVAL_MS = 5000
+    for (let i = 0; i < MAX_POLLS; i++) {
+      await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS))
+      try {
+        const listRes = await fetch('/api/documents')
+        if (!listRes.ok) break
+        const allDocs = await listRes.json()
+        const updated = allDocs.find((d) => d.id === doc.id)
+        if (!updated) break
+        setDocs((prev) => prev.map((d) => (d.id === doc.id ? updated : d)))
+        setActiveDoc((prev) => (prev?.id === doc.id ? updated : prev))
+        if (updated.status === 'indexed') {
+          // Show the "document ready" system message once indexing completes.
+          setMessagesByDoc((prev) => ({
+            ...prev,
+            [updated.id]: [
+              ...(prev[updated.id] ?? []),
+              {
+                id: Date.now(),
+                role: 'system',
+                docName: updated.name,
+                docType: updated.type,
+                pages: updated.pages,
+                sheets: updated.sheets,
+              },
+            ],
+          }))
+          break
+        }
+        if (updated.status === 'failed') break
+      } catch {
+        break
+      }
     }
   }
 
