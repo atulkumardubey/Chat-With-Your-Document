@@ -1,10 +1,10 @@
 {
   "verdict": "FIX",
   "metrics": {
-    "faithfulness": 0.8125,
-    "answer_relevance": 0.84375,
-    "context_precision": 0.3625,
-    "context_recall": 1.0,
+    "faithfulness": 0.7777777777777778,
+    "answer_relevance": 0.7555555555555555,
+    "context_precision": 0.26666666666666666,
+    "context_recall": 0.8888888888888888,
     "correct_refusal_rate": 1.0
   },
   "thresholds": {
@@ -16,8 +16,8 @@
   },
   "summary": {
     "total": 20,
-    "answerable": 16,
-    "unanswerable": 4,
+    "answerable": 18,
+    "unanswerable": 2,
     "passed": 4,
     "failed": 16
   },
@@ -30,7 +30,7 @@
     "sheets": null,
     "status": "indexed"
   },
-  "questions_file": "C:\\learning\\Project\\Chat With Your Document\\eval\\my_questions.json",
+  "questions_file": "C:\\learning\\Project\\Chat With Your Document\\eval\\corporate_governance_questions.json",
   "results": [
     {
       "question_id": 1,
@@ -38,7 +38,7 @@
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "Corporate governance refers to the system of rules, practices, and processes by which a company is directed and controlled, involving the balancing of interests among stakeholders such as shareholders, senior management, customers, suppliers, financiers, the government, and the community. It provides the framework for attaining a company's objectives and encompasses management spheres like action plans, internal controls, performance measurement, and corporate disclosure, grounded in the principles of accountability, transparency, and fairness.",
+      "answer": "Corporate governance refers to the system of rules, practices, and processes by which a company is directed and controlled, involving the balancing of interests among shareholders, senior management, customers, suppliers, financiers, the government, and the community.",
       "contexts": [
         "What is Corporate Governance?\nCorporate governance refers to the system of rules, practices, and processes by which a company is\ndirected and controlled. It essentially involves balancing the interests of a company's many stakeholders,\nsuch as shareholders, senior management executives, customers, suppliers, financiers, the government,\nand the community.\nGood corporate governance is fundamental to the long-term success and sustainability of any\norganization. It provides the framework for attaining a company's objectives and encompasses practically\nevery sphere of management, from action plans and internal controls to performance measurement and\ncorporate disclosure.\nAccountability Transparency Fairness",
         "Corporate Governance\nPrinciples and Best Practices\nOctober 2024\nTable of Contents\nWhat is Corporate Governance? 3\nBoard of Directors 5\nAudit and Risk Committee 10\nShareholder Rights 14\nTransparency and Disclosure 18",
@@ -47,50 +47,47 @@
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications."
       ],
       "best_similarity": 0.9006750583648682,
-      "faithfulness": 0.0,
+      "faithfulness": 1.0,
       "answer_relevance": 1.0,
       "context_precision": 1.0,
       "context_recall": 1.0,
-      "all_passed": false,
-      "failure_type": "generation_error"
+      "all_passed": true
     },
     {
       "question_id": 2,
-      "question": "What are the three pillars of corporate governance?",
+      "question": "What are the three key principles of corporate governance listed in the document?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
       "answer": "I couldn't find anything in the uploaded documents that answers this question. Please try rephrasing, or upload a document that covers this topic.",
       "contexts": [
         "Corporate Governance\nPrinciples and Best Practices\nOctober 2024\nTable of Contents\nWhat is Corporate Governance? 3\nBoard of Directors 5\nAudit and Risk Committee 10\nShareholder Rights 14\nTransparency and Disclosure 18",
-        "What is Corporate Governance?\nCorporate governance refers to the system of rules, practices, and processes by which a company is\ndirected and controlled. It essentially involves balancing the interests of a company's many stakeholders,\nsuch as shareholders, senior management executives, customers, suppliers, financiers, the government,\nand the community.\nGood corporate governance is fundamental to the long-term success and sustainability of any\norganization. It provides the framework for attaining a company's objectives and encompasses practically\nevery sphere of management, from action plans and internal controls to performance measurement and\ncorporate disclosure.\nAccountability Transparency Fairness",
-        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
         "corporate disclosure.\nAccountability Transparency Fairness\nLeaders are responsible for their All material matters concerning All shareholders, including\ndecisions and actions to the company must be accurately minorities, must be treated\nshareholders and stakeholders. and timely disclosed. equally and fairly.\nKey Principles\n(cid:127) Ensure the basis for an effective corporate governance framework.\n(cid:127) Define the rights of shareholders and key ownership functions.\n(cid:127) Ensure equitable treatment of all shareholders.\n(cid:127) Recognize the rights of stakeholders and promote active cooperation.\n(cid:127) Ensure timely and accurate disclosure on all material matters.\n(cid:127) Ensure the strategic guidance of the company by the board.",
-        "Source: Corporate Governance Guidelines 2024\nESG Reporting\nEnvironmental, Social and Governance (ESG) reporting has become an increasingly important aspect of\ncorporate transparency. Companies are expected to disclose their environmental impact, social\nresponsibility initiatives, and governance practices. ESG reporting frameworks commonly used include the\nGlobal Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), and the Task\nForce on Climate-related Financial Disclosures (TCFD).\nConsequences of Poor Disclosure\n(cid:127) Regulatory fines and penalties from securities regulators.\n(cid:127) Loss of investor confidence and decline in share price.\n(cid:127) Increased cost of capital due to higher perceived risk."
+        "What is Corporate Governance?\nCorporate governance refers to the system of rules, practices, and processes by which a company is\ndirected and controlled. It essentially involves balancing the interests of a company's many stakeholders,\nsuch as shareholders, senior management executives, customers, suppliers, financiers, the government,\nand the community.\nGood corporate governance is fundamental to the long-term success and sustainability of any\norganization. It provides the framework for attaining a company's objectives and encompasses practically\nevery sphere of management, from action plans and internal controls to performance measurement and\ncorporate disclosure.\nAccountability Transparency Fairness",
+        "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting",
+        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications."
       ],
-      "best_similarity": 0.7669202963208799,
+      "best_similarity": 0.8056809662079555,
       "faithfulness": 0.0,
       "answer_relevance": 1.0,
-      "context_precision": 0.4,
-      "context_recall": 1.0,
-      "all_passed": false,
-      "failure_type": "generation_error"
+      "error": "Error code: 504",
+      "all_passed": false
     },
     {
       "question_id": 3,
-      "question": "What is the recommended board size?",
+      "question": "What is the recommended board size for a well-structured board?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "The recommended board size is between seven and fifteen members, depending on the size and complexity of the organization.",
+      "answer": "The recommended board size is between seven and fifteen members.",
       "contexts": [
         "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
-        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
         "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
+        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
-        "Right / Feature\tOrdinary Shareholders\tPreference Shareholders\nVoting Rights\tOne vote per share\tGenerally no voting rights\nDividend Priority\tAfter preference\tPaid first, fixed rate\nLiquidation Priority\tLast claim\tBefore ordinary shareholders\nCapital Growth\tFull participation\tLimited or none\nDividend Type\tVariable\tFixed percentage"
+        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit"
       ],
-      "best_similarity": 0.6231066809233032,
+      "best_similarity": 0.690376002170087,
       "faithfulness": 1.0,
       "answer_relevance": 1.0,
       "context_precision": 0.2,
@@ -100,7 +97,7 @@
     },
     {
       "question_id": 4,
-      "question": "How many independent non-executive directors must the board include at minimum?",
+      "question": "What is the minimum number of independent non-executive directors required on the board?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
@@ -112,17 +109,38 @@
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
         "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person."
       ],
-      "best_similarity": 0.8118493073076437,
+      "best_similarity": 0.8213985072732876,
       "faithfulness": 1.0,
-      "answer_relevance": 0.5,
+      "answer_relevance": 1.0,
       "context_precision": 0.6,
       "context_recall": 1.0,
-      "all_passed": false,
-      "failure_type": "unknown"
+      "all_passed": true
     },
     {
       "question_id": 5,
-      "question": "How many executive directors are required at minimum?",
+      "question": "What percentage of board members must be independent directors when the CEO and Board Chair is the same person?",
+      "answerable": true,
+      "source_type": "pdf_text",
+      "document_id": 25,
+      "answer": "At least fifty percent.",
+      "contexts": [
+        "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person.",
+        "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
+        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
+        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
+        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit"
+      ],
+      "best_similarity": 0.8276154398918152,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 6,
+      "question": "What is the minimum number of executive directors required on the board?",
       "answerable": true,
       "source_type": "pdf_table",
       "document_id": 25,
@@ -130,61 +148,39 @@
       "contexts": [
         "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
         "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
-        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit",
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
+        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit",
         "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person."
       ],
-      "best_similarity": 0.8327952126982696,
-      "faithfulness": 0.0,
+      "best_similarity": 0.8352325656871473,
+      "faithfulness": 1.0,
       "answer_relevance": 0.5,
-      "context_precision": 0.2,
+      "context_precision": 0.0,
       "context_recall": 1.0,
       "all_passed": false,
       "failure_type": "chunking_problem"
     },
     {
-      "question_id": 6,
-      "question": "What is the recommended percentage of independent directors?",
+      "question_id": 7,
+      "question": "What is the recommended percentage of non-executive directors on the board?",
       "answerable": true,
       "source_type": "pdf_table",
       "document_id": 25,
       "answer": "40%",
       "contexts": [
-        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
         "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
+        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
         "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
         "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit"
       ],
-      "best_similarity": 0.7400289642759043,
+      "best_similarity": 0.7736225263105331,
       "faithfulness": 1.0,
-      "answer_relevance": 0.5,
-      "context_precision": 0.6,
+      "answer_relevance": 0.6,
+      "context_precision": 0.4,
       "context_recall": 1.0,
       "all_passed": false,
       "failure_type": "unknown"
-    },
-    {
-      "question_id": 7,
-      "question": "What is the CEO responsible for?",
-      "answerable": true,
-      "source_type": "pdf_text",
-      "document_id": 25,
-      "answer": "The CEO is responsible for running the day-to-day operations of the company.",
-      "contexts": [
-        "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person.",
-        "corporate disclosure.\nAccountability Transparency Fairness\nLeaders are responsible for their All material matters concerning All shareholders, including\ndecisions and actions to the company must be accurately minorities, must be treated\nshareholders and stakeholders. and timely disclosed. equally and fairly.\nKey Principles\n(cid:127) Ensure the basis for an effective corporate governance framework.\n(cid:127) Define the rights of shareholders and key ownership functions.\n(cid:127) Ensure equitable treatment of all shareholders.\n(cid:127) Recognize the rights of stakeholders and promote active cooperation.\n(cid:127) Ensure timely and accurate disclosure on all material matters.\n(cid:127) Ensure the strategic guidance of the company by the board.",
-        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
-        "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
-        "What is Corporate Governance?\nCorporate governance refers to the system of rules, practices, and processes by which a company is\ndirected and controlled. It essentially involves balancing the interests of a company's many stakeholders,\nsuch as shareholders, senior management executives, customers, suppliers, financiers, the government,\nand the community.\nGood corporate governance is fundamental to the long-term success and sustainability of any\norganization. It provides the framework for attaining a company's objectives and encompasses practically\nevery sphere of management, from action plans and internal controls to performance measurement and\ncorporate disclosure.\nAccountability Transparency Fairness"
-      ],
-      "best_similarity": 0.7284659905155916,
-      "faithfulness": 1.0,
-      "answer_relevance": 0.5,
-      "context_precision": 0.2,
-      "context_recall": 1.0,
-      "all_passed": false,
-      "failure_type": "chunking_problem"
     },
     {
       "question_id": 8,
@@ -192,7 +188,7 @@
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "The minimum number of members required on the Audit and Risk Committee is three.",
+      "answer": "three",
       "contexts": [
         "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit",
         "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
@@ -210,19 +206,19 @@
     },
     {
       "question_id": 9,
-      "question": "Who must serve on the Audit and Risk Committee?",
+      "question": "What is the qualification requirement for at least one Audit and Risk Committee member?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "The Audit and Risk Committee must consist of a minimum of three members, all of whom must be independent non-executive directors. At least one member must have relevant financial expertise (defined as experience in finance, accounting, or related financial management). The committee chair must not be the same person as the board chair.\n\nFinal answer is: The Audit and Risk Committee must consist of a minimum of three members, all of whom must be independent non-executive directors, and at least one member must have relevant financial expertise (defined as experience in finance, accounting, or related financial management). The committee chair must not be the same person as the board chair.",
+      "answer": "At least one member must have relevant financial expertise, defined as experience in finance, accounting, or related financial management.",
       "contexts": [
         "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit",
         "the same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit\nReview annual and interim Oversee and monitor the internal Recommend appointment,\nfinancial statements before audit function and its findings. remuneration and terms of the\nsubmission to the board. external auditor.\nRisk Management Compliance Whistleblowing\nReview the company's risk Monitor compliance with legal, Oversee the whistleblowing\nmanagement framework and risk regulatory and ethical policy and investigate reported\nappetite. requirements. concerns.",
         "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
-        "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person."
+        "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings"
       ],
-      "best_similarity": 0.8535429239273071,
+      "best_similarity": 0.8249625563621521,
       "faithfulness": 1.0,
       "answer_relevance": 1.0,
       "context_precision": 0.2,
@@ -232,21 +228,21 @@
     },
     {
       "question_id": 10,
-      "question": "How many days notice must shareholders receive before the AGM?",
+      "question": "All members of the Audit and Risk Committee must be what type of directors?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "twenty-one days",
+      "answer": "Here, 1993, 1993, 1997, 1999, 2003, 2011, 2017, 2029, 2039, 2053, 2063, 2081, 2089, 2111, 2113, 2131, 2137, 2153, 2161, 2179, 2203, 2221, 2237, 2251, 2263, 2281, 2293, 2297, 2311, 2333, 2351, 2371, 2383, 2389, 2393, 2411, 2423, 2437, 2453, 2467, 2473, 2503, 2521, 2531, 2539, 2543, 2549, 2551, 2579, 2591, 2609, 2621, 2657, 2671, 2683, 2689, 2713, 2711, 2717, 2729, 2731, 2741, 2747, 2753, 2773, 2801, 2803, 2833, 2851, 2851, 2859, 2861, 2879, 2897, 2919, 2903, 2917, 2939, 2953, 2963, 2971, 2999, 3001, 3011, 3019, 3019, 3023, 3037, 3041, 3061, all the 1 the: a, the (the1, the (a) the 1, 1, 2, , 3, 4, , 5,  1,     1, 1,  \ufffd , 1, 1, 1, 1, 1, 1,, 1, 1, 1, 1,, 1, 1, 1, 1,, 1, 1, 1, 1,, 1, 1,1, 1, 1, 1, 1, 1, 1,1, 1, 1,1, 1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,19 1.111,11,11,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993, 1993,  the same person as the board chair. Key Functions Financial Reporting Internal Audit External Audit Review annual and interim financial statements before submission to the board. Risk Management Compliance Whistleblowing Review the company's risk management framework and risk appetite. Oversee and monitor the internal audit function and its findings. Recommend remuneration and terms of the external auditor. Oversee the whistleblowing policy and investigate reported concerns. Independent Directors 3 40% Objective judgment Board Chair 1 N/A Lead board meetings Source: Corporate Governance Guidelines 2024 Board Responsibilities (cid:127) Setting the company's strategic objectives and overseeing their implementation. (cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives. (cid:127) Aligning executive and board remuneration with the longer-term interests of the company. (cid:127) Ensuring a formal and transparent board nomination and election process. (cid:127) Monitoring and managing potential conflicts of interest of management and board members. (cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems. (cid:127) Overseeing the process of disclosure and communications. Question: All members of the Audit and Risk Committee must be what type of directors?",
       "contexts": [
-        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "Right / Feature\tOrdinary Shareholders\tPreference Shareholders\nVoting Rights\tOne vote per share\tGenerally no voting rights\nDividend Priority\tAfter preference\tPaid first, fixed rate\nLiquidation Priority\tLast claim\tBefore ordinary shareholders\nCapital Growth\tFull participation\tLimited or none\nDividend Type\tVariable\tFixed percentage",
-        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
-        "Shareholder Rights\nProtecting and facilitating the exercise of shareholder rights is a cornerstone of good corporate\ngovernance. Shareholders are the owners of the company and must be provided with adequate\nmechanisms to exercise their rights effectively.\nBasic Shareholder Rights\n(cid:127) Right to secure methods of ownership registration.\n(cid:127) Right to convey or transfer shares freely.\n(cid:127) Right to obtain relevant and material information on the corporation on a timely basis.\n(cid:127) Right to participate and vote in general shareholder meetings.\n(cid:127) Right to elect and remove members of the board.\n(cid:127) Right to share in the profits of the corporation through dividends.\nAnnual General Meeting (AGM)",
-        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024"
+        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit",
+        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
+        "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
+        "the same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit\nReview annual and interim Oversee and monitor the internal Recommend appointment,\nfinancial statements before audit function and its findings. remuneration and terms of the\nsubmission to the board. external auditor.\nRisk Management Compliance Whistleblowing\nReview the company's risk Monitor compliance with legal, Oversee the whistleblowing\nmanagement framework and risk regulatory and ethical policy and investigate reported\nappetite. requirements. concerns.",
+        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications."
       ],
-      "best_similarity": 0.8527544824627366,
-      "faithfulness": 1.0,
-      "answer_relevance": 1.0,
+      "best_similarity": 0.8371007040619071,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.0,
       "context_precision": 0.2,
       "context_recall": 1.0,
       "all_passed": false,
@@ -254,19 +250,19 @@
     },
     {
       "question_id": 11,
-      "question": "What is the minimum quorum for an AGM?",
+      "question": "Within how many months of the financial year end must the Annual General Meeting be held?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "The minimum quorum for an AGM is ten percent of total voting shares.",
+      "answer": "six months",
       "contexts": [
         "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
+        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
         "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
-        "Right / Feature\tOrdinary Shareholders\tPreference Shareholders\nVoting Rights\tOne vote per share\tGenerally no voting rights\nDividend Priority\tAfter preference\tPaid first, fixed rate\nLiquidation Priority\tLast claim\tBefore ordinary shareholders\nCapital Growth\tFull participation\tLimited or none\nDividend Type\tVariable\tFixed percentage",
-        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit"
+        "the same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit\nReview annual and interim Oversee and monitor the internal Recommend appointment,\nfinancial statements before audit function and its findings. remuneration and terms of the\nsubmission to the board. external auditor.\nRisk Management Compliance Whistleblowing\nReview the company's risk Monitor compliance with legal, Oversee the whistleblowing\nmanagement framework and risk regulatory and ethical policy and investigate reported\nappetite. requirements. concerns.",
+        "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting"
       ],
-      "best_similarity": 0.7891740798950195,
+      "best_similarity": 0.7693862456449138,
       "faithfulness": 1.0,
       "answer_relevance": 1.0,
       "context_precision": 0.2,
@@ -276,7 +272,51 @@
     },
     {
       "question_id": 12,
-      "question": "How many votes does an ordinary shareholder have per share?",
+      "question": "How many days notice must shareholders receive before an AGM?",
+      "answerable": true,
+      "source_type": "pdf_text",
+      "document_id": 25,
+      "answer": "Twenty-one days",
+      "contexts": [
+        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
+        "Right / Feature\tOrdinary Shareholders\tPreference Shareholders\nVoting Rights\tOne vote per share\tGenerally no voting rights\nDividend Priority\tAfter preference\tPaid first, fixed rate\nLiquidation Priority\tLast claim\tBefore ordinary shareholders\nCapital Growth\tFull participation\tLimited or none\nDividend Type\tVariable\tFixed percentage",
+        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
+        "Shareholder Rights\nProtecting and facilitating the exercise of shareholder rights is a cornerstone of good corporate\ngovernance. Shareholders are the owners of the company and must be provided with adequate\nmechanisms to exercise their rights effectively.\nBasic Shareholder Rights\n(cid:127) Right to secure methods of ownership registration.\n(cid:127) Right to convey or transfer shares freely.\n(cid:127) Right to obtain relevant and material information on the corporation on a timely basis.\n(cid:127) Right to participate and vote in general shareholder meetings.\n(cid:127) Right to elect and remove members of the board.\n(cid:127) Right to share in the profits of the corporation through dividends.\nAnnual General Meeting (AGM)",
+        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024"
+      ],
+      "best_similarity": 0.8579494441777814,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 13,
+      "question": "What is the minimum quorum required for an AGM?",
+      "answerable": true,
+      "source_type": "pdf_text",
+      "document_id": 25,
+      "answer": "The minimum quorum for an AGM is ten percent of total voting shares.",
+      "contexts": [
+        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
+        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
+        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
+        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit",
+        "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings"
+      ],
+      "best_similarity": 0.7815797589326248,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
+    },
+    {
+      "question_id": 14,
+      "question": "How many votes does an ordinary shareholder receive per share?",
       "answerable": true,
       "source_type": "pdf_table",
       "document_id": 25,
@@ -284,25 +324,47 @@
       "contexts": [
         "Right / Feature\tOrdinary Shareholders\tPreference Shareholders\nVoting Rights\tOne vote per share\tGenerally no voting rights\nDividend Priority\tAfter preference\tPaid first, fixed rate\nLiquidation Priority\tLast claim\tBefore ordinary shareholders\nCapital Growth\tFull participation\tLimited or none\nDividend Type\tVariable\tFixed percentage",
         "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "Shareholder Rights\nProtecting and facilitating the exercise of shareholder rights is a cornerstone of good corporate\ngovernance. Shareholders are the owners of the company and must be provided with adequate\nmechanisms to exercise their rights effectively.\nBasic Shareholder Rights\n(cid:127) Right to secure methods of ownership registration.\n(cid:127) Right to convey or transfer shares freely.\n(cid:127) Right to obtain relevant and material information on the corporation on a timely basis.\n(cid:127) Right to participate and vote in general shareholder meetings.\n(cid:127) Right to elect and remove members of the board.\n(cid:127) Right to share in the profits of the corporation through dividends.\nAnnual General Meeting (AGM)",
         "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
+        "Shareholder Rights\nProtecting and facilitating the exercise of shareholder rights is a cornerstone of good corporate\ngovernance. Shareholders are the owners of the company and must be provided with adequate\nmechanisms to exercise their rights effectively.\nBasic Shareholder Rights\n(cid:127) Right to secure methods of ownership registration.\n(cid:127) Right to convey or transfer shares freely.\n(cid:127) Right to obtain relevant and material information on the corporation on a timely basis.\n(cid:127) Right to participate and vote in general shareholder meetings.\n(cid:127) Right to elect and remove members of the board.\n(cid:127) Right to share in the profits of the corporation through dividends.\nAnnual General Meeting (AGM)",
         "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings"
       ],
-      "best_similarity": 0.8233161673953449,
-      "faithfulness": 1.0,
+      "best_similarity": 0.8183218484616834,
+      "faithfulness": 0.0,
       "answer_relevance": 1.0,
       "context_precision": 0.4,
       "context_recall": 1.0,
       "all_passed": false,
-      "failure_type": "unknown"
+      "failure_type": "generation_error"
     },
     {
-      "question_id": 13,
+      "question_id": 15,
+      "question": "How quickly must board changes be disclosed after they occur?",
+      "answerable": true,
+      "source_type": "pdf_table",
+      "document_id": 25,
+      "answer": "Within 24 hours.",
+      "contexts": [
+        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
+        "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting",
+        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
+        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
+        "(cid:127) Increased cost of capital due to higher perceived risk.\n(cid:127) Potential criminal liability for directors and officers.\n(cid:127) Reputational damage that can affect long-term business relationships.\nThis document is intended for educational purposes only. October 2024. All rights reserved."
+      ],
+      "best_similarity": 0.7216555046048473,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.0,
+      "context_precision": 0.4,
+      "context_recall": 0.0,
+      "all_passed": false,
+      "failure_type": "generation_error"
+    },
+    {
+      "question_id": 16,
       "question": "Who is responsible for disclosing material price-sensitive information?",
       "answerable": true,
       "source_type": "pdf_table",
       "document_id": 25,
-      "answer": "Company Secretary",
+      "answer": "The Company Secretary is responsible for disclosing material price-sensitive information, as stated in the Mandatory Disclosure Items table.",
       "contexts": [
         "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting",
         "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
@@ -319,42 +381,20 @@
       "failure_type": "unknown"
     },
     {
-      "question_id": 14,
-      "question": "How quickly must board changes be disclosed?",
-      "answerable": true,
-      "source_type": "pdf_table",
-      "document_id": 25,
-      "answer": "Within 24 hours",
-      "contexts": [
-        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
-        "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting",
-        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
-        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings"
-      ],
-      "best_similarity": 0.7313864551321918,
-      "faithfulness": 1.0,
-      "answer_relevance": 0.5,
-      "context_precision": 0.4,
-      "context_recall": 1.0,
-      "all_passed": false,
-      "failure_type": "unknown"
-    },
-    {
-      "question_id": 15,
-      "question": "Name one ESG reporting framework mentioned in the document.",
+      "question_id": 17,
+      "question": "What are the three ESG reporting frameworks mentioned in the document?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "Global Reporting Initiative (GRI)",
+      "answer": "The three ESG reporting frameworks mentioned are the Global Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), and the Task Force on Climate-related Financial Disclosures (TCFD).",
       "contexts": [
         "Source: Corporate Governance Guidelines 2024\nESG Reporting\nEnvironmental, Social and Governance (ESG) reporting has become an increasingly important aspect of\ncorporate transparency. Companies are expected to disclose their environmental impact, social\nresponsibility initiatives, and governance practices. ESG reporting frameworks commonly used include the\nGlobal Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), and the Task\nForce on Climate-related Financial Disclosures (TCFD).\nConsequences of Poor Disclosure\n(cid:127) Regulatory fines and penalties from securities regulators.\n(cid:127) Loss of investor confidence and decline in share price.\n(cid:127) Increased cost of capital due to higher perceived risk.",
-        "the same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit\nReview annual and interim Oversee and monitor the internal Recommend appointment,\nfinancial statements before audit function and its findings. remuneration and terms of the\nsubmission to the board. external auditor.\nRisk Management Compliance Whistleblowing\nReview the company's risk Monitor compliance with legal, Oversee the whistleblowing\nmanagement framework and risk regulatory and ethical policy and investigate reported\nappetite. requirements. concerns.",
         "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting",
-        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
+        "the same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit\nReview annual and interim Oversee and monitor the internal Recommend appointment,\nfinancial statements before audit function and its findings. remuneration and terms of the\nsubmission to the board. external auditor.\nRisk Management Compliance Whistleblowing\nReview the company's risk Monitor compliance with legal, Oversee the whistleblowing\nmanagement framework and risk regulatory and ethical policy and investigate reported\nappetite. requirements. concerns.",
+        "Corporate Governance\nPrinciples and Best Practices\nOctober 2024\nTable of Contents\nWhat is Corporate Governance? 3\nBoard of Directors 5\nAudit and Risk Committee 10\nShareholder Rights 14\nTransparency and Disclosure 18",
         "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit"
       ],
-      "best_similarity": 0.7602102017527952,
+      "best_similarity": 0.7814809083938599,
       "faithfulness": 1.0,
       "answer_relevance": 1.0,
       "context_precision": 0.2,
@@ -363,96 +403,60 @@
       "failure_type": "chunking_problem"
     },
     {
-      "question_id": 16,
-      "question": "What is one consequence of poor disclosure?",
+      "question_id": 18,
+      "question": "What is the minimum number of independent directors recommended for a board when the CEO and Chair roles are separate?",
       "answerable": true,
       "source_type": "pdf_text",
       "document_id": 25,
-      "answer": "Regulatory fines and penalties from securities regulators.",
-      "contexts": [
-        "Source: Corporate Governance Guidelines 2024\nESG Reporting\nEnvironmental, Social and Governance (ESG) reporting has become an increasingly important aspect of\ncorporate transparency. Companies are expected to disclose their environmental impact, social\nresponsibility initiatives, and governance practices. ESG reporting frameworks commonly used include the\nGlobal Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), and the Task\nForce on Climate-related Financial Disclosures (TCFD).\nConsequences of Poor Disclosure\n(cid:127) Regulatory fines and penalties from securities regulators.\n(cid:127) Loss of investor confidence and decline in share price.\n(cid:127) Increased cost of capital due to higher perceived risk.",
-        "(cid:127) Increased cost of capital due to higher perceived risk.\n(cid:127) Potential criminal liability for directors and officers.\n(cid:127) Reputational damage that can affect long-term business relationships.\nThis document is intended for educational purposes only. October 2024. All rights reserved.",
-        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
-        "corporate disclosure.\nAccountability Transparency Fairness\nLeaders are responsible for their All material matters concerning All shareholders, including\ndecisions and actions to the company must be accurately minorities, must be treated\nshareholders and stakeholders. and timely disclosed. equally and fairly.\nKey Principles\n(cid:127) Ensure the basis for an effective corporate governance framework.\n(cid:127) Define the rights of shareholders and key ownership functions.\n(cid:127) Ensure equitable treatment of all shareholders.\n(cid:127) Recognize the rights of stakeholders and promote active cooperation.\n(cid:127) Ensure timely and accurate disclosure on all material matters.\n(cid:127) Ensure the strategic guidance of the company by the board.",
-        "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting"
-      ],
-      "best_similarity": 0.6464138837806067,
-      "faithfulness": 1.0,
-      "answer_relevance": 1.0,
-      "context_precision": 0.4,
-      "context_recall": 1.0,
-      "all_passed": false,
-      "failure_type": "unknown"
-    },
-    {
-      "question_id": 17,
-      "question": "What is the current stock price of the company?",
-      "answerable": false,
-      "source_type": "refusal",
-      "document_id": 25,
-      "answer": "I couldn't find anything in the uploaded documents that answers this question. Please try rephrasing, or upload a document that covers this topic.",
-      "contexts": [
-        "Right / Feature\tOrdinary Shareholders\tPreference Shareholders\nVoting Rights\tOne vote per share\tGenerally no voting rights\nDividend Priority\tAfter preference\tPaid first, fixed rate\nLiquidation Priority\tLast claim\tBefore ordinary shareholders\nCapital Growth\tFull participation\tLimited or none\nDividend Type\tVariable\tFixed percentage",
-        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
-        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
-        "(cid:127) Increased cost of capital due to higher perceived risk.\n(cid:127) Potential criminal liability for directors and officers.\n(cid:127) Reputational damage that can affect long-term business relationships.\nThis document is intended for educational purposes only. October 2024. All rights reserved."
-      ],
-      "best_similarity": 0.6471391530550042,
-      "is_correct_refusal": true,
-      "all_passed": true
-    },
-    {
-      "question_id": 18,
-      "question": "Who is the current CEO of the company?",
-      "answerable": false,
-      "source_type": "refusal",
-      "document_id": 25,
-      "answer": "I couldn't find anything in the uploaded documents that answers this question. Please try rephrasing, or upload a document that covers this topic.",
+      "answer": "1.  **Analyze User Input:**\n   - User asks: \"What is the minimum number of independent directors recommended for a board when the CEO and Chair roles are separate?\"\n   - I need to answer ONLY using the provided context chunks.\n   - Rules: Every claim must be supported by context. If not enough info, output the exact refusal sentence.\n\n2.  **Scan Context for Relevant Information:**\n   Let me look through the context chunks for mentions of independent directors, CEO/Chair separation, and minimum numbers.\n\n   Chunk 1: \n   \"Overseeing the process of disclosure and communications.\n   CEO vs Board Chair\n   Best practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible for running the day-to-day operations of the company, while the Board Chair leads the board in its oversight role. Combining these roles creates a concentration of power that can undermine effective governance. At least fifty percent of board members must be independent directors when the positions of Chair and CEO are held by the same person.\"\n\n   Chunk 2 (Board Composition table):\n   \"Director Type\tMinimum Required\tRecommended %\tKey Responsibility\n   Executive Directors\t1\t20%\tDay-to-day operations\n   Non-Executive Directors\t3\t40%\tStrategic oversight\n   Independent Directors\t3\t40%\tObjective judgment\n   Board Chair\t1\tN/A\tLead board meetings\"\n\n   Chunk 3 (Board of Directors section):\n   \"The board of directors is the context does not contain enough information to answer the highest\ng for a CA,, U for U U the the U O OODthe a Uu \" \"bthewriter \"sthes in a \u201c\u201cw language) athe\n\n to in a \"\n \u201c\" \"\u201c \"\n\n  thejsw The the the \"\n \u201c\" \u201cs \u201c \"\n \u201cAnswer\"\u201c\u201c\u201c \" \"\n\n\n\ns\"\") \"m your either  fors in F an) the) the of \" of of \" \" is \u201c a)\n\n \" \"f) in \")s an \\(w Letw Files \" ,\n\n)\n.)s\n\n to The\n.s\n\n\n.",
       "contexts": [
         "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person.",
+        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
         "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
-        "corporate disclosure.\nAccountability Transparency Fairness\nLeaders are responsible for their All material matters concerning All shareholders, including\ndecisions and actions to the company must be accurately minorities, must be treated\nshareholders and stakeholders. and timely disclosed. equally and fairly.\nKey Principles\n(cid:127) Ensure the basis for an effective corporate governance framework.\n(cid:127) Define the rights of shareholders and key ownership functions.\n(cid:127) Ensure equitable treatment of all shareholders.\n(cid:127) Recognize the rights of stakeholders and promote active cooperation.\n(cid:127) Ensure timely and accurate disclosure on all material matters.\n(cid:127) Ensure the strategic guidance of the company by the board.",
-        "Corporate Governance\nPrinciples and Best Practices\nOctober 2024\nTable of Contents\nWhat is Corporate Governance? 3\nBoard of Directors 5\nAudit and Risk Committee 10\nShareholder Rights 14\nTransparency and Disclosure 18",
-        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications."
+        "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications.",
+        "Audit and Risk Committee\nThe Audit and Risk Committee is a sub-committee of the board of directors. Its primary purpose is to assist\nthe board in fulfilling its oversight responsibilities for the financial reporting process, the audit process, the\ncompany's system of internal controls, and compliance with laws and regulations.\nCommittee Composition Requirements\nThe Audit and Risk Committee must consist of a minimum of three members, all of whom must be\nindependent non-executive directors. At least one member must have relevant financial expertise, defined\nas experience in finance, accounting, or related financial management. The committee chair must not be\nthe same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit"
       ],
-      "best_similarity": 0.5933476686477661,
-      "is_correct_refusal": true,
-      "all_passed": true
+      "best_similarity": 0.811955381152356,
+      "faithfulness": 0.0,
+      "answer_relevance": 0.5,
+      "context_precision": 0.0,
+      "context_recall": 1.0,
+      "all_passed": false,
+      "failure_type": "chunking_problem"
     },
     {
       "question_id": 19,
-      "question": "What was the company's annual revenue in 2024?",
+      "question": "What is the maximum financial penalty for failing to comply with the corporate governance rules in this document?",
       "answerable": false,
       "source_type": "refusal",
       "document_id": 25,
       "answer": "I couldn't find anything in the uploaded documents that answers this question. Please try rephrasing, or upload a document that covers this topic.",
       "contexts": [
         "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
-        "Corporate Governance\nPrinciples and Best Practices\nOctober 2024\nTable of Contents\nWhat is Corporate Governance? 3\nBoard of Directors 5\nAudit and Risk Committee 10\nShareholder Rights 14\nTransparency and Disclosure 18",
         "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
-        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "the same person as the board chair.\nKey Functions\nFinancial Reporting Internal Audit External Audit\nReview annual and interim Oversee and monitor the internal Recommend appointment,\nfinancial statements before audit function and its findings. remuneration and terms of the\nsubmission to the board. external auditor.\nRisk Management Compliance Whistleblowing\nReview the company's risk Monitor compliance with legal, Oversee the whistleblowing\nmanagement framework and risk regulatory and ethical policy and investigate reported\nappetite. requirements. concerns."
+        "(cid:127) Increased cost of capital due to higher perceived risk.\n(cid:127) Potential criminal liability for directors and officers.\n(cid:127) Reputational damage that can affect long-term business relationships.\nThis document is intended for educational purposes only. October 2024. All rights reserved.",
+        "Transparency and Disclosure\nThe corporate governance framework must ensure that timely and accurate disclosure is made on all\nmaterial matters regarding the corporation, including its financial situation, performance, ownership, and\ngovernance structure.\nMandatory Disclosure Items\nDisclosure Category Frequency Responsible Party\nAnnual Financial Statements Annually Board of Directors\nInterim Financial Statements Quarterly CFO / Finance Team\nMaterial Price-Sensitive Information Immediately Company Secretary\nBoard Changes Within 24 hours Company Secretary\nDirector Shareholding Changes Within 3 business days Directors\nRelated Party Transactions Annually Audit Committee\nSource: Corporate Governance Guidelines 2024\nESG Reporting",
+        "Source: Corporate Governance Guidelines 2024\nESG Reporting\nEnvironmental, Social and Governance (ESG) reporting has become an increasingly important aspect of\ncorporate transparency. Companies are expected to disclose their environmental impact, social\nresponsibility initiatives, and governance practices. ESG reporting frameworks commonly used include the\nGlobal Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), and the Task\nForce on Climate-related Financial Disclosures (TCFD).\nConsequences of Poor Disclosure\n(cid:127) Regulatory fines and penalties from securities regulators.\n(cid:127) Loss of investor confidence and decline in share price.\n(cid:127) Increased cost of capital due to higher perceived risk."
       ],
-      "best_similarity": 0.5941261826195178,
+      "best_similarity": 0.723405198847939,
       "is_correct_refusal": true,
       "all_passed": true
     },
     {
       "question_id": 20,
-      "question": "How many employees work for the company?",
+      "question": "Who is the current chairperson of the company that published this document?",
       "answerable": false,
       "source_type": "refusal",
       "document_id": 25,
       "answer": "I couldn't find anything in the uploaded documents that answers this question. Please try rephrasing, or upload a document that covers this topic.",
       "contexts": [
+        "Corporate Governance\nPrinciples and Best Practices\nOctober 2024\nTable of Contents\nWhat is Corporate Governance? 3\nBoard of Directors 5\nAudit and Risk Committee 10\nShareholder Rights 14\nTransparency and Disclosure 18",
+        "Capital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage\nSource: Corporate Governance Guidelines 2024",
+        "Disclosure Category\tFrequency\tResponsible Party\nAnnual Financial Statements\tAnnually\tBoard of Directors\nInterim Financial Statements\tQuarterly\tCFO / Finance Team\nMaterial Price-Sensitive Information\tImmediately\tCompany Secretary\nBoard Changes\tWithin 24 hours\tCompany Secretary\nDirector Shareholding Changes\tWithin 3 business days\tDirectors\nRelated Party Transactions\tAnnually\tAudit Committee",
         "Board of Directors\nThe board of directors is the highest governing authority within the management structure at any\npublicly-traded company. It is elected by the shareholders to represent their interests and oversee the\nmanagement of the organization.\nBoard Composition\nA well-structured board should consist of a majority of independent directors. The recommended board\nsize is between seven and fifteen members depending on the size and complexity of the organization. The\nboard must include at minimum three independent non-executive directors.\nDirector Type Minimum Required Recommended % Key Responsibility\nExecutive Directors 1 20% Day-to-day operations\nNon-Executive Directors 3 40% Strategic oversight\nIndependent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings",
-        "Director Type\tMinimum Required\tRecommended %\tKey Responsibility\nExecutive Directors\t1\t20%\tDay-to-day operations\nNon-Executive Directors\t3\t40%\tStrategic oversight\nIndependent Directors\t3\t40%\tObjective judgment\nBoard Chair\t1\tN/A\tLead board meetings",
-        "Annual General Meeting (AGM)\nThe Annual General Meeting must be held within six months of the end of the company's financial year.\nShareholders must receive at least twenty-one days notice of the AGM. The minimum quorum for an AGM\nis ten percent of total voting shares. Key resolutions at the AGM include approval of the annual financial\nstatements, election of directors, appointment of auditors, and declaration of dividends.\nOrdinary vs Preference Shareholders\nRight / Feature Ordinary Shareholders Preference Shareholders\nVoting Rights One vote per share Generally no voting rights\nDividend Priority After preference Paid first, fixed rate\nLiquidation Priority Last claim Before ordinary shareholders\nCapital Growth Full participation Limited or none\nDividend Type Variable Fixed percentage",
-        "(cid:127) Overseeing the process of disclosure and communications.\nCEO vs Board Chair\nBest practice requires the separation of the roles of the CEO and the Board Chair. The CEO is responsible\nfor running the day-to-day operations of the company, while the Board Chair leads the board in its\noversight role. Combining these roles creates a concentration of power that can undermine effective\ngovernance. At least fifty percent of board members must be independent directors when the positions of\nChair and CEO are held by the same person.",
         "Independent Directors 3 40% Objective judgment\nBoard Chair 1 N/A Lead board meetings\nSource: Corporate Governance Guidelines 2024\nBoard Responsibilities\n(cid:127) Setting the company's strategic objectives and overseeing their implementation.\n(cid:127) Selecting, compensating, monitoring and, when necessary, replacing key executives.\n(cid:127) Aligning executive and board remuneration with the longer-term interests of the company.\n(cid:127) Ensuring a formal and transparent board nomination and election process.\n(cid:127) Monitoring and managing potential conflicts of interest of management and board members.\n(cid:127) Ensuring the integrity of the corporation's accounting and financial reporting systems.\n(cid:127) Overseeing the process of disclosure and communications."
       ],
-      "best_similarity": 0.5918482189268945,
+      "best_similarity": 0.6708287196857512,
       "is_correct_refusal": true,
       "all_passed": true
     }
