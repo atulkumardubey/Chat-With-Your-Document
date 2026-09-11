@@ -129,7 +129,7 @@ function Top5Failures({ results }) {
                   const ok = val !== undefined && val >= 0.6
                   return (
                     <span key={k} className={`qg-top5-score-chip ${ok ? 'ok' : 'bad'}`}>
-                      {METRIC_LABELS[k].split(' ')[0]}: {val !== undefined ? (val * 100).toFixed(0) + '%' : '—'}
+                      {METRIC_LABELS[k]}: {val !== undefined ? (val * 100).toFixed(0) + '%' : '—'}
                     </span>
                   )
                 })}
