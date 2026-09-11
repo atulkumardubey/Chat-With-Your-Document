@@ -1,142 +1,142 @@
 [
   {
     "id": 1,
-    "question": "What were Typical Manufacturing's net sales in 19X9?",
-    "reference": "Net sales were $765,050 in 19X9.",
-    "source_type": "income_statement",
+    "question": "What is corporate governance?",
+    "reference": "Corporate governance refers to the system of rules, practices, and processes by which a company is directed and controlled.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 2,
-    "question": "What was the company's net income in 19X9?",
-    "reference": "Net income was $47,750.",
-    "source_type": "income_statement",
+    "question": "What are the three pillars of corporate governance?",
+    "reference": "The three pillars are Accountability, Transparency, and Fairness.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 3,
-    "question": "How much cash and cash equivalents did Typical have at December 31, 19X9?",
-    "reference": "Cash and cash equivalents totaled $19,500.",
-    "source_type": "balance_sheet",
+    "question": "What is the recommended board size?",
+    "reference": "The recommended board size is between seven and fifteen members.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 4,
-    "question": "What was the value of marketable securities in 19X9?",
-    "reference": "Marketable securities were reported at $46,300.",
-    "source_type": "balance_sheet",
+    "question": "How many independent non-executive directors must the board include at minimum?",
+    "reference": "The board must include at minimum three independent non-executive directors.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 5,
-    "question": "What amount was reported for inventories in 19X9?",
-    "reference": "Inventories were valued at $180,000.",
-    "source_type": "balance_sheet",
+    "question": "How many executive directors are required at minimum?",
+    "reference": "Executive Directors have a minimum requirement of one.",
+    "source_type": "pdf_table",
     "answerable": true
   },
   {
     "id": 6,
-    "question": "What was the total current assets balance in 19X9?",
-    "reference": "Total current assets were $405,800.",
-    "source_type": "balance_sheet",
+    "question": "What is the recommended percentage of independent directors?",
+    "reference": "The recommended percentage of independent directors is 40 percent.",
+    "source_type": "pdf_table",
     "answerable": true
   },
   {
     "id": 7,
-    "question": "What was the net property, plant, and equipment balance in 19X9?",
-    "reference": "Net property, plant and equipment amounted to $260,000.",
-    "source_type": "balance_sheet",
+    "question": "What is the CEO responsible for?",
+    "reference": "The CEO is responsible for running the day-to-day operations of the company.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 8,
-    "question": "How much accounts payable did the company report in 19X9?",
-    "reference": "Accounts payable were $60,000.",
-    "source_type": "balance_sheet",
+    "question": "What is the minimum number of members required on the Audit and Risk Committee?",
+    "reference": "The Audit and Risk Committee must consist of a minimum of three members.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 9,
-    "question": "What was the total liabilities balance in 19X9?",
-    "reference": "Total liabilities were $322,000.",
-    "source_type": "balance_sheet",
+    "question": "Who must serve on the Audit and Risk Committee?",
+    "reference": "All members must be independent non-executive directors.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 10,
-    "question": "What was the total shareholders' equity in 19X9?",
-    "reference": "Total shareholders' equity was $346,050.",
-    "source_type": "balance_sheet",
+    "question": "How many days notice must shareholders receive before the AGM?",
+    "reference": "Shareholders must receive at least twenty-one days notice of the AGM.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 11,
-    "question": "What was the gross margin reported for 19X9?",
-    "reference": "Gross margin was $230,050.",
-    "source_type": "income_statement",
+    "question": "What is the minimum quorum for an AGM?",
+    "reference": "The minimum quorum for an AGM is ten percent of total voting shares.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 12,
-    "question": "What was the operating income in 19X9?",
-    "reference": "Operating income was $105,196.",
-    "source_type": "income_statement",
+    "question": "How many votes does an ordinary shareholder have per share?",
+    "reference": "Ordinary shareholders have one vote per share.",
+    "source_type": "pdf_table",
     "answerable": true
   },
   {
     "id": 13,
-    "question": "How much interest expense did Typical incur in 19X9?",
-    "reference": "Interest expense totaled $16,250.",
-    "source_type": "income_statement",
+    "question": "Who is responsible for disclosing material price-sensitive information?",
+    "reference": "The Company Secretary is responsible for disclosing material price-sensitive information.",
+    "source_type": "pdf_table",
     "answerable": true
   },
   {
     "id": 14,
-    "question": "What was the net cash provided by operating activities in 19X9?",
-    "reference": "Net cash provided by operating activities was $74,800.",
-    "source_type": "cash_flow_statement",
+    "question": "How quickly must board changes be disclosed?",
+    "reference": "Board changes must be disclosed within 24 hours.",
+    "source_type": "pdf_table",
     "answerable": true
   },
   {
     "id": 15,
-    "question": "What was the working capital of Typical Manufacturing in 19X9?",
-    "reference": "Working capital was $229,800.",
-    "source_type": "financial_ratio_analysis",
+    "question": "Name one ESG reporting framework mentioned in the document.",
+    "reference": "One ESG reporting framework mentioned is the Global Reporting Initiative (GRI).",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 16,
-    "question": "What was the current ratio calculated for Typical Manufacturing?",
-    "reference": "The current ratio was 2.31 to 1.",
-    "source_type": "financial_ratio_analysis",
+    "question": "What is one consequence of poor disclosure?",
+    "reference": "One consequence of poor disclosure is regulatory fines and penalties.",
+    "source_type": "pdf_text",
     "answerable": true
   },
   {
     "id": 17,
-    "question": "Who was the CEO of Typical Manufacturing in 19X9?",
+    "question": "What is the current stock price of the company?",
     "reference": null,
-    "source_type": "unanswerable",
+    "source_type": "refusal",
     "answerable": false
   },
   {
     "id": 18,
-    "question": "What was the company's stock price on December 31, 19X9?",
+    "question": "Who is the current CEO of the company?",
     "reference": null,
-    "source_type": "unanswerable",
+    "source_type": "refusal",
     "answerable": false
   },
   {
     "id": 19,
-    "question": "How many employees worked for Typical Manufacturing in 19X9?",
+    "question": "What was the company's annual revenue in 2024?",
     "reference": null,
-    "source_type": "unanswerable",
+    "source_type": "refusal",
     "answerable": false
   },
   {
     "id": 20,
-    "question": "What was the geographical distribution of Typical Manufacturing's sales in 19X9?",
+    "question": "How many employees work for the company?",
     "reference": null,
-    "source_type": "unanswerable",
+    "source_type": "refusal",
     "answerable": false
   }
 ]

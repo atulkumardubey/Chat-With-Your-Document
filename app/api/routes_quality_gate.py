@@ -45,10 +45,22 @@ def start_quality_gate_run(body: RunRequest) -> dict:
     q: queue.Queue = queue.Queue()
     _runs[run_id] = {"queue": q, "done": False}
 
-    # Resolve questions file
+    # Resolve questions file — priority order:
+    #  1. Explicitly supplied in request body
+    #  2. eval/<safe_docname>_questions.json  (doc-specific file)
+    #  3. eval/my_questions.json              (generic fallback)
+    #  4. None → auto-generate from chunks
     qfile = body.questions_file
-    if qfile is None and _DEFAULT_QUESTIONS.exists():
-        qfile = str(_DEFAULT_QUESTIONS)
+    if qfile is None:
+        from eval.question_generator import get_document_info
+        doc = get_document_info(body.doc_id)
+        if doc:
+            safe_name = "".join(c if c.isalnum() else "_" for c in doc["name"].rsplit(".", 1)[0]).lower()
+            doc_specific = _DEFAULT_QUESTIONS.parent / f"{safe_name}_questions.json"
+            if doc_specific.exists():
+                qfile = str(doc_specific)
+            elif _DEFAULT_QUESTIONS.exists():
+                qfile = str(_DEFAULT_QUESTIONS)
 
     t = threading.Thread(
         target=_run_eval_worker,

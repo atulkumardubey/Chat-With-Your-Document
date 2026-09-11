@@ -6,6 +6,7 @@ All metrics score 0.0-1.0. Uses NVIDIA NIM LLM with JSON output parsing.
 
 import json
 import logging
+import re
 
 from app.config import settings
 from app.llm.nvidia_client import _client, _strip_thinking
@@ -36,14 +37,35 @@ def judge_completion(system_prompt: str, user_prompt: str) -> str:
     return _strip_thinking(raw)
 
 
+_JSON_BLOCK_RE = re.compile(r'```(?:json)?\s*(\{.*?\})\s*```', re.DOTALL)
+_JSON_OBJECT_RE = re.compile(r'\{[^{}]*"score"[^{}]*\}', re.DOTALL)
+
+
 def _parse_json_score(response: str) -> float:
-    """Extract {"score": <float>} from LLM response, default to 0.0 on parse error."""
+    """Extract {"score": <float>} from LLM response, even when surrounded by reasoning text.
+
+    The judge LLM sometimes outputs numbered reasoning steps before the JSON
+    (e.g. "1. **Understand the Task**...") without using <think> tags, so a
+    plain json.loads() on the full response fails. We try three strategies:
+      1. Pull JSON from a ```json ... ``` fenced block.
+      2. Find the first {...} object that contains "score" anywhere in the text.
+      3. Fall back to parsing the whole response directly.
+    """
+    # Strategy 1 — fenced code block
+    m = _JSON_BLOCK_RE.search(response)
+    if m:
+        candidate = m.group(1)
+    else:
+        # Strategy 2 — bare JSON object containing "score"
+        m = _JSON_OBJECT_RE.search(response)
+        candidate = m.group(0) if m else response
+
     try:
-        data = json.loads(response)
+        data = json.loads(candidate)
         score = float(data.get("score", 0.0))
-        return max(0.0, min(1.0, score))  # Clamp to [0.0, 1.0]
+        return max(0.0, min(1.0, score))
     except (json.JSONDecodeError, ValueError, TypeError) as e:
-        logger.warning(f"Failed to parse score JSON: {response[:100]}... Error: {e}")
+        logger.warning(f"Failed to parse score JSON: {response[:120]}... Error: {e}")
         return 0.0
 
 
@@ -64,23 +86,22 @@ def score_faithfulness(answer: str, contexts: list[str]) -> float:
     """
     contexts_text = "\n\n".join(f"[Chunk {i+1}]\n{ctx}" for i, ctx in enumerate(contexts))
 
-    system_prompt = """You are an impartial RAG evaluation judge. Your task is to assess faithfulness.
+    system_prompt = """You are an impartial RAG evaluation judge. Assess faithfulness.
 
-Faithfulness: Does the answer contain only claims that are directly supported by the provided contexts?
-- Every factual claim in the answer should be traceable to at least one context chunk.
+Faithfulness: Does the answer contain only claims directly supported by the provided contexts?
+- Every factual claim must be traceable to at least one context chunk.
 - If the answer includes information NOT in the contexts, or contradicts them, reduce the score.
 
-Respond with JSON: {"score": <float between 0.0 and 1.0>, "reason": "<brief explanation>"}"""
+OUTPUT RULES: Respond with ONLY a JSON object — no reasoning, no preamble, no markdown.
+Format: {"score": <float 0.0-1.0>, "reason": "<one sentence>"}"""
 
-    user_prompt = f"""Evaluate the faithfulness of this answer against the contexts below.
-
-CONTEXTS:
+    user_prompt = f"""CONTEXTS:
 {contexts_text}
 
 ANSWER:
 {answer}
 
-Provide your judgment as JSON."""
+JSON:"""
 
     response = judge_completion(system_prompt, user_prompt)
     return _parse_json_score(response)
@@ -101,24 +122,22 @@ def score_answer_relevance(question: str, answer: str) -> float:
     Returns:
         Answer Relevance score 0.0-1.0
     """
-    system_prompt = """You are an impartial RAG evaluation judge. Your task is to assess answer relevance.
+    system_prompt = """You are an impartial RAG evaluation judge. Assess answer relevance.
 
-Answer Relevance: Does the answer directly and thoroughly address the question asked?
-- The answer should focus on answering the question without padding.
-- Deduct points if the answer is partially relevant, off-topic, or incomplete.
+Answer Relevance: Does the answer directly and thoroughly address the question?
+- Deduct points if partially relevant, off-topic, or incomplete.
 - If the answer correctly refuses to answer an unanswerable question, score 1.0.
 
-Respond with JSON: {"score": <float between 0.0 and 1.0>, "reason": "<brief explanation>"}"""
+OUTPUT RULES: Respond with ONLY a JSON object — no reasoning, no preamble, no markdown.
+Format: {"score": <float 0.0-1.0>, "reason": "<one sentence>"}"""
 
-    user_prompt = f"""Evaluate how well the answer addresses the question.
-
-QUESTION:
+    user_prompt = f"""QUESTION:
 {question}
 
 ANSWER:
 {answer}
 
-Provide your judgment as JSON."""
+JSON:"""
 
     response = judge_completion(system_prompt, user_prompt)
     return _parse_json_score(response)
@@ -141,24 +160,22 @@ def score_context_precision(question: str, contexts: list[str]) -> float:
     """
     contexts_text = "\n\n".join(f"[Chunk {i+1}]\n{ctx}" for i, ctx in enumerate(contexts))
 
-    system_prompt = """You are an impartial RAG evaluation judge. Your task is to assess context precision.
+    system_prompt = """You are an impartial RAG evaluation judge. Assess context precision.
 
-Context Precision: Of the retrieved chunks, what fraction is actually relevant to answering the question?
-- A chunk is relevant if it contains information that could help answer the question.
-- A chunk is irrelevant if it is off-topic or unrelated noise.
+Context Precision: Of the retrieved chunks, what fraction is relevant to answering the question?
+- A chunk is relevant if it contains information that helps answer the question.
 - Calculate: (# relevant chunks) / (total # chunks)
 
-Respond with JSON: {"score": <float between 0.0 and 1.0>, "reason": "<brief explanation of which chunks were relevant/irrelevant>"}"""
+OUTPUT RULES: Respond with ONLY a JSON object — no reasoning, no preamble, no markdown.
+Format: {"score": <float 0.0-1.0>, "reason": "<one sentence>"}"""
 
-    user_prompt = f"""Evaluate the precision of these retrieved contexts for the given question.
-
-QUESTION:
+    user_prompt = f"""QUESTION:
 {question}
 
 RETRIEVED CONTEXTS:
 {contexts_text}
 
-Provide your judgment as JSON."""
+JSON:"""
 
     response = judge_completion(system_prompt, user_prompt)
     return _parse_json_score(response)
@@ -181,24 +198,23 @@ def score_context_recall(reference: str, contexts: list[str]) -> float:
     """
     contexts_text = "\n\n".join(f"[Chunk {i+1}]\n{ctx}" for i, ctx in enumerate(contexts))
 
-    system_prompt = """You are an impartial RAG evaluation judge. Your task is to assess context recall.
+    system_prompt = """You are an impartial RAG evaluation judge. Assess context recall.
 
-Context Recall: Of the facts/claims in the reference answer, what fraction is covered by the retrieved contexts?
+Context Recall: What fraction of the facts in the reference answer are covered by the retrieved contexts?
 - Extract key facts from the reference answer.
 - Check if each fact appears (exactly or equivalently) in at least one context chunk.
-- Calculate: (# facts covered by contexts) / (total # facts in reference)
+- Calculate: (# facts covered) / (total # facts in reference)
 
-Respond with JSON: {"score": <float between 0.0 and 1.0>, "reason": "<brief explanation of which facts were/weren't covered>"}"""
+OUTPUT RULES: Respond with ONLY a JSON object — no reasoning, no preamble, no markdown.
+Format: {"score": <float 0.0-1.0>, "reason": "<one sentence>"}"""
 
-    user_prompt = f"""Evaluate how well the retrieved contexts cover the facts in this reference answer.
-
-REFERENCE ANSWER:
+    user_prompt = f"""REFERENCE ANSWER:
 {reference}
 
 RETRIEVED CONTEXTS:
 {contexts_text}
 
-Provide your judgment as JSON."""
+JSON:"""
 
     response = judge_completion(system_prompt, user_prompt)
     return _parse_json_score(response)
