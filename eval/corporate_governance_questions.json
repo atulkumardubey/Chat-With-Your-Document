@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "question": "What is corporate governance?",
+    "reference": "Corporate governance refers to the system of rules, practices, and processes by which a company is directed and controlled.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 2,
+    "question": "What are the three key principles of corporate governance listed in the document?",
+    "reference": "Accountability, Transparency, and Fairness.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 3,
+    "question": "What is the recommended board size for a well-structured board?",
+    "reference": "The recommended board size is between seven and fifteen members depending on the size and complexity of the organization.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 4,
+    "question": "What is the minimum number of independent non-executive directors required on the board?",
+    "reference": "The board must include at minimum three independent non-executive directors.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 5,
+    "question": "What percentage of board members must be independent directors when the CEO and Board Chair is the same person?",
+    "reference": "At least fifty percent of board members must be independent directors when the positions of Chair and CEO are held by the same person.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 6,
+    "question": "What is the minimum number of executive directors required on the board?",
+    "reference": "Executive Directors: 1 minimum required.",
+    "source_type": "pdf_table",
+    "answerable": true
+  },
+  {
+    "id": 7,
+    "question": "What is the recommended percentage of non-executive directors on the board?",
+    "reference": "Non-Executive Directors: 40% recommended.",
+    "source_type": "pdf_table",
+    "answerable": true
+  },
+  {
+    "id": 8,
+    "question": "What is the minimum number of members required on the Audit and Risk Committee?",
+    "reference": "The Audit and Risk Committee must consist of a minimum of three members.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 9,
+    "question": "What is the qualification requirement for at least one Audit and Risk Committee member?",
+    "reference": "At least one member must have relevant financial expertise, defined as experience in finance, accounting.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 10,
+    "question": "All members of the Audit and Risk Committee must be what type of directors?",
+    "reference": "All members must be independent non-executive directors.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 11,
+    "question": "Within how many months of the financial year end must the Annual General Meeting be held?",
+    "reference": "The Annual General Meeting must be held within six months of the end of the company's financial year.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 12,
+    "question": "How many days notice must shareholders receive before an AGM?",
+    "reference": "Shareholders must receive at least twenty-one days notice of the AGM.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 13,
+    "question": "What is the minimum quorum required for an AGM?",
+    "reference": "The minimum quorum for an AGM is ten percent of total voting shares.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 14,
+    "question": "How many votes does an ordinary shareholder receive per share?",
+    "reference": "Ordinary shareholders have one vote per share.",
+    "source_type": "pdf_table",
+    "answerable": true
+  },
+  {
+    "id": 15,
+    "question": "How quickly must board changes be disclosed after they occur?",
+    "reference": "Board Changes must be disclosed within 24 hours by the Company Secretary.",
+    "source_type": "pdf_table",
+    "answerable": true
+  },
+  {
+    "id": 16,
+    "question": "Who is responsible for disclosing material price-sensitive information?",
+    "reference": "The Company Secretary is responsible for disclosing Material Price-Sensitive Information immediately.",
+    "source_type": "pdf_table",
+    "answerable": true
+  },
+  {
+    "id": 17,
+    "question": "What are the three ESG reporting frameworks mentioned in the document?",
+    "reference": "The Global Reporting Initiative (GRI), the Sustainability Accounting Standards Board (SASB), and the Task Force on Climate-related Financial Disclosures (TCFD).",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 18,
+    "question": "What is the minimum number of independent directors recommended for a board when the CEO and Chair roles are separate?",
+    "reference": "A well-structured board should consist of a majority of independent directors, with at minimum three independent non-executive directors.",
+    "source_type": "pdf_text",
+    "answerable": true
+  },
+  {
+    "id": 19,
+    "question": "What is the maximum financial penalty for failing to comply with the corporate governance rules in this document?",
+    "reference": null,
+    "source_type": "refusal",
+    "answerable": false
+  },
+  {
+    "id": 20,
+    "question": "Who is the current chairperson of the company that published this document?",
+    "reference": null,
+    "source_type": "refusal",
+    "answerable": false
+  }
+]

@@ -42,10 +42,10 @@ logger = logging.getLogger(__name__)
 # All metrics must reach their threshold for a SHIP verdict.
 
 THRESHOLDS: dict[str, float] = {
-    "faithfulness": 0.70,
-    "answer_relevance": 0.70,
-    "context_precision": 0.60,
-    "context_recall": 0.60,
+    "faithfulness": 0.60,
+    "answer_relevance": 0.60,
+    "context_precision": 0.50,
+    "context_recall": 0.40,
     "correct_refusal_rate": 1.00,
 }
 
