@@ -8,6 +8,14 @@ const METRIC_LABELS = {
   correct_refusal_rate: 'Correct Refusal Rate',
 }
 
+// Short labels used inside score chips — must be unique
+const CHIP_LABELS = {
+  faithfulness:      'Faithful',
+  answer_relevance:  'Answer',
+  context_precision: 'Precision',
+  context_recall:    'Recall',
+}
+
 const FAILURE_TYPE_LABELS = {
   retrieval_miss: 'Retrieval Miss',
   chunking_problem: 'Chunking Problem',
@@ -72,13 +80,13 @@ function SummaryStats({ summary }) {
   return (
     <div className="qg-summary-stats">
       {[
-        { label: 'Total', value: summary.total, color: 'var(--text)' },
-        { label: 'Answerable', value: summary.answerable, color: 'var(--accent)' },
-        { label: 'Refusal', value: summary.unanswerable, color: 'var(--accent-light)' },
-        { label: 'Passed', value: summary.passed, color: 'var(--green)' },
-        { label: 'Failed', value: summary.failed, color: 'var(--red)' },
-      ].map(({ label, value, color }) => (
-        <div key={label} className="qg-stat-card">
+        { label: 'Total',      value: summary.total,       color: 'var(--text)',         bar: 'var(--border-mid)' },
+        { label: 'Answerable', value: summary.answerable,  color: 'var(--accent)',        bar: 'var(--accent)' },
+        { label: 'Refusal',    value: summary.unanswerable,color: 'var(--accent-light)',  bar: 'var(--accent-light)' },
+        { label: 'Passed',     value: summary.passed,      color: 'var(--green)',         bar: 'var(--green)' },
+        { label: 'Failed',     value: summary.failed,      color: 'var(--red)',           bar: 'var(--red)' },
+      ].map(({ label, value, color, bar }) => (
+        <div key={label} className="qg-stat-card" style={{ borderBottom: `3px solid ${bar}` }}>
           <span className="qg-stat-value" style={{ color }}>{value}</span>
           <span className="qg-stat-label">{label}</span>
         </div>
@@ -116,7 +124,7 @@ function Top5Failures({ results }) {
           <div className="qg-top5-body">
             <div className="qg-top5-header">
               <span className="qg-top5-qid">Q{String(f.question_id).padStart(2, '0')}</span>
-              <span className="qg-top5-source">[{f.source_type || (f.answerable ? 'answerable' : 'refusal')}]</span>
+              <span className="qg-top5-source">{(f.source_type || (f.answerable ? 'answerable' : 'refusal')).replace(/_/g, ' ')}</span>
               <span className="qg-top5-failure-type">
                 {FAILURE_TYPE_LABELS[f.failure_type] ?? f.failure_type ?? 'Unknown'}
               </span>
@@ -126,10 +134,10 @@ function Top5Failures({ results }) {
               <div className="qg-top5-scores">
                 {['faithfulness', 'answer_relevance', 'context_precision', 'context_recall'].map((k) => {
                   const val = f[k]
-                  const ok = val !== undefined && val >= 0.6
+                  const chipClass = val === undefined ? 'na' : val >= 0.6 ? 'ok' : 'bad'
                   return (
-                    <span key={k} className={`qg-top5-score-chip ${ok ? 'ok' : 'bad'}`}>
-                      {METRIC_LABELS[k].split(' ')[0]}: {val !== undefined ? (val * 100).toFixed(0) + '%' : '—'}
+                    <span key={k} className={`qg-top5-score-chip ${chipClass}`}>
+                      {CHIP_LABELS[k]}: {val !== undefined ? (val * 100).toFixed(0) + '%' : '—'}
                     </span>
                   )
                 })}
@@ -167,7 +175,7 @@ function ResultRow({ r }) {
       <button className="qg-result-toggle" onClick={() => setOpen((o) => !o)}>
         <span className={`qg-result-dot ${passed ? 'pass' : 'fail'}`} />
         <span className="qg-result-qid">Q{String(r.question_id).padStart(2, '0')}</span>
-        <span className="qg-result-type">[{r.source_type || (isAnswerable ? 'answerable' : 'refusal')}]</span>
+        <span className="qg-result-type">{(r.source_type || (isAnswerable ? 'answerable' : 'refusal')).replace(/_/g, ' ')}</span>
         <span className="qg-result-question">{r.question}</span>
         {!isAnswerable && (
           <span className={`qg-result-refusal-badge ${r.is_correct_refusal ? 'pass' : 'fail'}`}>
@@ -186,14 +194,18 @@ function ResultRow({ r }) {
         <div className="qg-result-detail">
           {isAnswerable && (
             <div className="qg-result-scores">
-              {['faithfulness', 'answer_relevance', 'context_precision', 'context_recall'].map((k) => (
-                <div key={k} className="qg-mini-score">
-                  <span className="qg-mini-label">{METRIC_LABELS[k]}</span>
-                  <span className={`qg-mini-value ${r[k] !== undefined && r[k] >= 0.6 ? 'ok' : 'bad'}`}>
-                    {r[k] !== undefined ? (r[k] * 100).toFixed(0) + '%' : '—'}
-                  </span>
-                </div>
-              ))}
+              {['faithfulness', 'answer_relevance', 'context_precision', 'context_recall'].map((k) => {
+                const val = r[k]
+                const cls = val === undefined ? 'na' : val >= 0.6 ? 'ok' : 'bad'
+                return (
+                  <div key={k} className="qg-mini-score">
+                    <span className="qg-mini-label">{METRIC_LABELS[k]}</span>
+                    <span className={`qg-mini-value ${cls}`}>
+                      {val !== undefined ? (val * 100).toFixed(0) + '%' : '—'}
+                    </span>
+                  </div>
+                )
+              })}
             </div>
           )}
           {r.answer && (

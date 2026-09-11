@@ -1,9 +1,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green:      #22c55e;
+  --green:      #10b981;
+  --green-bg:   rgba(16, 185, 129, .12);
+  --green-border: rgba(16, 185, 129, .25);
   --yellow:     #f59e0b;
-  --red:        #ef4444;
+  --red:        #f43f5e;
+  --red-bg:     rgba(244, 63, 94, .10);
+  --red-border: rgba(244, 63, 94, .25);
+  --slate:      #94a3b8;
+  --slate-bg:   rgba(148, 163, 184, .10);
+  --slate-border: rgba(148, 163, 184, .22);
   --sidebar-w:  260px;
   --icon-bar-w: 52px;
   --radius:     10px;
@@ -66,6 +73,9 @@ body {
   color: var(--text);
   height: 100vh;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 #root { height: 100vh; }
 
@@ -1117,14 +1127,16 @@ body {
   border-radius: 20px;
 }
 .qg-verdict-badge.ship {
-  background: rgba(34,197,94,.15);
+  background: var(--green-bg);
   color: var(--green);
-  border: 1px solid rgba(34,197,94,.3);
+  border: 1px solid var(--green-border);
+  letter-spacing: .06em;
 }
 .qg-verdict-badge.fix {
-  background: rgba(239,68,68,.12);
+  background: var(--red-bg);
   color: var(--red);
-  border: 1px solid rgba(239,68,68,.3);
+  border: 1px solid var(--red-border);
+  letter-spacing: .06em;
 }
 
 .qg-body {
@@ -1195,16 +1207,16 @@ body {
   align-items: center;
   gap: 3px;
 }
-.qg-stat-value { font-size: 22px; font-weight: 800; line-height: 1; }
-.qg-stat-label { font-size: 10px; color: var(--text-muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.qg-stat-value { font-size: 22px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+.qg-stat-label { font-size: 10px; color: var(--text-muted); font-weight: 600; letter-spacing: .07em; text-transform: uppercase; margin-top: 1px; }
 
 /* Section title */
 .qg-section-title {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .09em;
-  color: var(--text-muted);
+  letter-spacing: .1em;
+  color: var(--text-sub);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1276,8 +1288,8 @@ body {
   border-radius: 20px;
   text-align: center;
 }
-.qg-status-badge.pass { background: rgba(34,197,94,.13); color: var(--green); }
-.qg-status-badge.fail { background: rgba(239,68,68,.12); color: var(--red); }
+.qg-status-badge.pass { background: var(--green-bg); color: var(--green); }
+.qg-status-badge.fail { background: var(--red-bg); color: var(--red); }
 
 /* Top 5 Failures */
 .qg-no-failures {
@@ -1285,9 +1297,11 @@ body {
   color: var(--green);
   text-align: center;
   padding: 16px;
-  background: rgba(34,197,94,.07);
+  background: var(--green-bg);
   border-radius: 8px;
-  border: 1px solid rgba(34,197,94,.2);
+  border: 1px solid var(--green-border);
+  font-weight: 500;
+  letter-spacing: .01em;
 }
 
 .qg-top5-list { display: flex; flex-direction: column; gap: 8px; }
@@ -1297,21 +1311,21 @@ body {
   gap: 12px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--accent);
   border-radius: 10px;
   padding: 12px 14px;
-  transition: box-shadow .15s;
+  transition: box-shadow .2s, border-color .2s;
 }
-.qg-top5-card:hover { box-shadow: 0 2px 12px rgba(239,68,68,.12); }
+.qg-top5-card:hover { box-shadow: 0 2px 14px var(--accent-glow2); border-color: var(--border-acc); }
 
 .qg-top5-rank {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--red);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: .65;
   flex-shrink: 0;
   width: 26px;
   line-height: 1.4;
-  opacity: .7;
 }
 .qg-top5-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
 
@@ -1324,42 +1338,69 @@ body {
 }
 .qg-top5-source {
   font-size: 10px;
-  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(6, 182, 212, .10);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, .25);
   flex-shrink: 0;
+  text-transform: capitalize;
 }
 .qg-top5-failure-type {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .04em;
+  font-weight: 600;
+  letter-spacing: .03em;
   padding: 2px 9px;
   border-radius: 10px;
-  background: rgba(239,68,68,.12);
-  color: var(--red);
+  background: var(--accent-dim);
+  color: var(--accent-light);
+  border: 1px solid var(--border-acc);
   flex-shrink: 0;
 }
 .qg-top5-question {
   font-size: 13px;
   font-weight: 500;
   color: var(--text);
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: -.005em;
 }
-.qg-top5-scores { display: flex; flex-wrap: wrap; gap: 5px; }
+.qg-top5-scores { display: flex; flex-wrap: wrap; gap: 6px; }
 .qg-top5-score-chip {
   font-size: 11px;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 11px;
   border-radius: 20px;
+  letter-spacing: .01em;
+  transition: opacity .15s;
 }
-.qg-top5-score-chip.ok { background: rgba(34,197,94,.12); color: var(--green); }
-.qg-top5-score-chip.bad { background: rgba(239,68,68,.12); color: var(--red); }
+/* Good score → emerald green */
+.qg-top5-score-chip.ok  {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid var(--green-border);
+}
+/* Low score → amber — "needs attention", not an error */
+.qg-top5-score-chip.bad {
+  background: rgba(245, 158, 11, .13);
+  color: #b45309;
+  border: 1px solid rgba(180, 83, 9, .25);
+}
+/* Not scored / undefined → plain neutral, works in both light + dark */
+.qg-top5-score-chip.na  {
+  background: var(--bg-input);
+  color: var(--text-sub);
+  border: 1px solid var(--border);
+}
 
 .qg-top5-answer {
   font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.5;
+  color: var(--text-sub);
+  line-height: 1.6;
   border-top: 1px solid var(--border);
-  padding-top: 6px;
-  margin-top: 2px;
+  padding-top: 8px;
+  margin-top: 4px;
 }
 .qg-top5-answer-label {
   font-weight: 600;
@@ -1394,6 +1435,8 @@ body {
 }
 .qg-result-row.passed { border-left: 3px solid var(--green); }
 .qg-result-row.failed { border-left: 3px solid var(--red); }
+.qg-result-row { transition: box-shadow .15s; }
+.qg-result-row:hover { box-shadow: 0 2px 10px rgba(0,0,0,.06); }
 
 .qg-result-toggle {
   width: 100%;
@@ -1426,12 +1469,19 @@ body {
 }
 .qg-result-type {
   font-size: 10px;
-  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: 2px 7px;
+  border-radius: 8px;
+  background: rgba(6, 182, 212, .10);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, .25);
   flex-shrink: 0;
-  max-width: 100px;
+  max-width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: capitalize;
 }
 .qg-result-question {
   flex: 1;
@@ -1444,11 +1494,12 @@ body {
 }
 .qg-result-failure-tag {
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 2px 7px;
   border-radius: 10px;
-  background: rgba(239,68,68,.12);
-  color: var(--red);
+  background: var(--accent-dim);
+  color: var(--accent-light);
+  border: 1px solid var(--border-acc);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -1459,8 +1510,8 @@ body {
   border-radius: 10px;
   flex-shrink: 0;
 }
-.qg-result-refusal-badge.pass { background: rgba(34,197,94,.13); color: var(--green); }
-.qg-result-refusal-badge.fail { background: rgba(239,68,68,.12); color: var(--red); }
+.qg-result-refusal-badge.pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.qg-result-refusal-badge.fail { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border); }
 
 .qg-result-arrow {
   font-size: 10px;
@@ -1496,8 +1547,9 @@ body {
 }
 .qg-mini-label { font-size: 9px; color: var(--text-muted); text-align: center; line-height: 1.3; }
 .qg-mini-value { font-size: 15px; font-weight: 700; }
-.qg-mini-value.ok { color: var(--green); }
-.qg-mini-value.bad { color: var(--red); }
+.qg-mini-value.ok  { color: var(--green); }
+.qg-mini-value.bad { color: #b45309; }
+.qg-mini-value.na  { color: var(--text-sub); }
 
 .qg-detail-label {
   font-size: 10px;
@@ -1596,8 +1648,8 @@ body {
   font-size: 13px; font-weight: 800; letter-spacing: .05em;
   padding: 4px 14px; border-radius: 20px;
 }
-.eval-verdict-badge.ship { background: rgba(34,197,94,.15); color: var(--green); border: 1px solid rgba(34,197,94,.3); }
-.eval-verdict-badge.fix  { background: rgba(239,68,68,.12); color: var(--red);   border: 1px solid rgba(239,68,68,.3); }
+.eval-verdict-badge.ship { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.eval-verdict-badge.fix  { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border); }
 
 .eval-body {
   flex: 1;
@@ -1685,9 +1737,9 @@ body {
 .eval-score-pct { font-size: 13px; font-weight: 700; text-align: right; }
 .eval-score-pct.pass { color: var(--green); }
 .eval-score-pct.fail { color: var(--red); }
-.eval-status-chip { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 20px; text-align: center; }
-.eval-status-chip.pass { background: rgba(34,197,94,.13); color: var(--green); }
-.eval-status-chip.fail { background: rgba(239,68,68,.12); color: var(--red); }
+.eval-status-chip { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; text-align: center; }
+.eval-status-chip.pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.eval-status-chip.fail { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border); }
 
 /* Live log */
 .eval-results-log {
@@ -1713,6 +1765,7 @@ body {
 }
 .eval-log-row.pass { border-left: 3px solid var(--green); }
 .eval-log-row.fail { border-left: 3px solid var(--red); }
+.eval-log-row { transition: background .15s; }
 
 .eval-log-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .eval-log-dot.pass { background: var(--green); }
@@ -1727,8 +1780,8 @@ body {
   font-size: 9px; font-weight: 700; padding: 2px 7px;
   border-radius: 10px; flex-shrink: 0; white-space: nowrap;
 }
-.eval-log-tag.pass { background: rgba(34,197,94,.13); color: var(--green); }
-.eval-log-tag.fail { background: rgba(239,68,68,.12); color: var(--red); }
+.eval-log-tag.pass { background: var(--green-bg); color: var(--green); }
+.eval-log-tag.fail { background: var(--red-bg);   color: var(--red); }
 
 /* Error */
 .eval-error {
